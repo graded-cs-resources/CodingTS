@@ -5,7 +5,7 @@ let CodeMirror = require("codemirror-minified");
 
 let exercises = require("./allExercisesIncludingHidden.js");
 let solutions = require("./solutions.js");
-
+let defaultInput = require("./utility/defaultInput.js");
 let deParam = require("./utility/deParam.js");
 let inputParser = require("./utility/inputParser.js");
 let tableHeader = require("./utility/tableHeader.js");
@@ -27,6 +27,7 @@ let editor = CodeMirror.fromTextArea(document.getElementById("answer"), {
   lineNumbers: true,
   matchBrackets: true,
   mode: "text/typescript",
+  lineWrapping:true,
   extraKeys: {
     "Cmd-/": "toggleComment",
     "Ctrl-/": "toggleComment",
@@ -34,6 +35,7 @@ let editor = CodeMirror.fromTextArea(document.getElementById("answer"), {
     "Shift-Tab": (cm) => cm.execCommand("indentLess")
   }
 });
+editor.setSize("100%",500);
 
 // Work out which excercise to show
 const urlParams = deParam(window.location.search);
@@ -57,7 +59,9 @@ displayExampleRuns(exercise, exerciseName);
 //   $('#show').css('visibility','visible');
 // }
 
-
+$('#defaults').on('click', () => {
+  editor.setValue(defaultInput(exerciseName) + " {\n  \n  \n}");
+});
 $('#solve').on('click', () => {
   $('tr').remove();
   $('#tests').append(tableHeader());

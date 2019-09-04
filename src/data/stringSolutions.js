@@ -3,32 +3,32 @@
 
 let solutions = {};
 
-solutions.helloName = function (name) {
+solutions.helloName = function helloName(name) {
     return `Hello ${name}!`;
   };
   
-solutions.makeAbba = function (a, b) {
+solutions.makeAbba = function makeAbba(a, b) {
   return a + b + b + a;
 };
 
-solutions.makeOutWord = function (out, word) {
+solutions.makeOutWord = function makeOutWord(out, word) {
   front = out.substring(0, 2);
   back = out.substring(2, 4);
   return front + word + back;
 };
 
-solutions.extraEnd = function (str) {
+solutions.extraEnd = function extraEnd(str) {
   if (str.length > 1) {
     back = str.substring(str.length - 2);
     return back + back + back;
   }
 };
 
-solutions.withoutEnd = function (str) {
+solutions.withoutEnd = function withoutEnd(str) {
   return str.substring(1, str.length - 1);
 };
 
-solutions.comboString = function (a, b) {
+solutions.comboString = function comboString(a, b) {
   if (a.length < b.length) {
     return a + b + a;
   } else {
@@ -36,27 +36,27 @@ solutions.comboString = function (a, b) {
   }
 };
 
-solutions.nonStart = function (a, b) {
+solutions.nonStart = function nonStart(a, b) {
   a = a.substring(1, a.length);
   b = b.substring(1, b.length);
   return a + b;
 };
 
-solutions.firstHalf = function (str) {
+solutions.firstHalf = function firstHalf(str) {
   if (str.length % 2 == 0) {
     return str.substring(0, str.length);
   }
   return str;
 };
 
-solutions.firstTwo = function (str) {
+solutions.firstTwo = function firstTwo(str) {
   if (str.length > 2) {
     return str.substring(0, 2);
   }
   return str;
 };
 
-solutions.left2 = function (str) {
+solutions.left2 = function left2(str) {
   if (str.length > 1) {
     front = str.substring(0, 2);
     back = str.substring(2, str.length);
@@ -65,7 +65,7 @@ solutions.left2 = function (str) {
   return str;
 };
 
-solutions.right2 = function (str) {
+solutions.right2 = function right2(str) {
   if (str.length > 1) {
     back = str.substring(str.length - 2, str.length);
     front = str.substring(0, str.length - 2);
@@ -74,21 +74,21 @@ solutions.right2 = function (str) {
   return str;
 };
 
-solutions.theEnd = function (str, front) {
+solutions.theEnd = function theEnd(str, front) {
   if (front) {
     return str.substring(0, 1);
   }
   return str.substring(str.length - 1);
 };
 
-solutions.withoutEnd2 = function (str) {
+solutions.withoutEnd2 = function withoutEnd2(str) {
   if (str.length <= 1) {
     return '';
   }
   return str.substring(1, str.length - 1);
 };
 
-solutions.middleTwo = function (str) {
+solutions.middleTwo = function middleTwo(str) {
   if (str.length % 2 == 0) {
     temp = str.substring(str.length);
     mid = temp.substring(0, 2);
@@ -97,7 +97,7 @@ solutions.middleTwo = function (str) {
   return str;
 };
 
-solutions.endsLy = function (str) {
+solutions.endsLy = function endsLy(str) {
   if (str.substring(str.length - 2, str.length) == 'ly') {
     return true;
   } else {
@@ -105,19 +105,19 @@ solutions.endsLy = function (str) {
   }
 };
 
-solutions.nTwice = function (str, n) {
+solutions.nTwice = function nTwice(str, n) {
   first = str.substring(0, n);
   end = str.substring(str.length - n);
   return first + end;
 };
 
-solutions.makeTags = function (tag, word) {
+solutions.makeTags = function makeTags(tag, word) {
   const otag = `<${tag}>`;
   const ctag = `</${tag}>`;
   return otag + word + ctag;
 };
 
-solutions.twoChar = function (str, index) {
+solutions.twoChar = function twoChar(str, index) {
   if (index + 2 > str.length || index < 0) {
     return str.substring(0, 2);
   }
@@ -125,13 +125,13 @@ solutions.twoChar = function (str, index) {
   return str.substring(index, index + 2);
 };
 
-solutions.middleThree = function (str) {
+solutions.middleThree = function middleThree(str) {
   const i = Math.floor(str.length / 2);
 
   return str.substring(i - 1, i + 2);
 };
 
-solutions.hasBad = function (str) {
+solutions.hasBad = function hasBad(str) {
   if (str.length == 3) {
     return str.substring(0, 3) == 'bad';
   }
@@ -144,7 +144,7 @@ solutions.hasBad = function (str) {
   return false;
 };
 
-solutions.atFirst = function (str) {
+solutions.atFirst = function atFirst(str) {
   if (str.length == 0) {
     return '@@';
   }
@@ -156,7 +156,7 @@ solutions.atFirst = function (str) {
   return str.substring(0, 2);
 };
 
-solutions.lastChars = function (a, b) {
+solutions.lastChars = function lastChars(a, b) {
   let res = '';
   if (a.length == 0) {
     res += '@';
@@ -173,7 +173,7 @@ solutions.lastChars = function (a, b) {
   return res;
 };
 
-solutions.conCat = function (a, b) {
+solutions.conCat = function conCat(a, b) {
   if (a.charAt(a.length - 1) == b.charAt(0)) {
     return a + b.substring(1);
   } else {
@@ -181,7 +181,7 @@ solutions.conCat = function (a, b) {
   }
 };
 
-solutions.lastTwo = function (str) {
+solutions.lastTwo = function lastTwo(str) {
   if (str.length < 2) {
     return str;
   }
@@ -190,7 +190,7 @@ solutions.lastTwo = function (str) {
         str.charAt(str.length - 2);
 };
 
-solutions.seeColor = function (str) {
+solutions.seeColor = function seeColor(str) {
   if (str.length >= 3 && str.substring(0, 3) == 'red') {
     return 'red';
   }
@@ -202,7 +202,7 @@ solutions.seeColor = function (str) {
   return '';
 };
 
-solutions.frontAgain = function (str) {
+solutions.frontAgain = function frontAgain(str) {
   if (str.length < 2) {
     return false;
   }
@@ -210,13 +210,13 @@ solutions.frontAgain = function (str) {
   return str.substring(0, 2) == str.substring(str.length - 2);
 };
 
-solutions.minCat = function (a, b) {
+solutions.minCat = function minCat(a, b) {
   const min = Math.min(a.length, b.length);
 
   return a.substring(a.length - min) + b.substring(b.length - min);
 };
 
-solutions.extraFront = function (str) {
+solutions.extraFront = function extraFront(str) {
   if (str.length >= 2) {
     str = str.substring(0, 2);
   }
@@ -224,7 +224,7 @@ solutions.extraFront = function (str) {
   return str + str + str;
 };
 
-solutions.without2 = function (str) {
+solutions.without2 = function without2(str) {
   if (str.length >= 2 &&
         str.substring(0, 2) == str.substring(str.length - 2)) {
     return str.substring(2);
@@ -233,7 +233,7 @@ solutions.without2 = function (str) {
   return str;
 };
 
-solutions.deFront = function (str) {
+solutions.deFront = function deFront(str) {
   if (str.length == 1 && str.charAt(0) != 'a') {
     return '';
   }
@@ -251,7 +251,7 @@ solutions.deFront = function (str) {
   return str;
 };
 
-solutions.startWord = function (str, word) {
+solutions.startWord = function startWord(str, word) {
   if (str.length >= word.length &&
         str.substring(1, word.length) == (word.substring(1))) {
     return str.substring(0, word.length);
@@ -260,7 +260,7 @@ solutions.startWord = function (str, word) {
   return '';
 };
 
-solutions.withoutX = function (str) {
+solutions.withoutX = function withoutX(str) {
   let start = 0;
   let end = str.length;
 
@@ -273,7 +273,7 @@ solutions.withoutX = function (str) {
   return str.substring(start, end);
 };
 
-solutions.withoutX2 = function (str) {
+solutions.withoutX2 = function withoutX2(str) {
   if (str.length == 1 && str.charAt(0) == 'x') {
     return '';
   }
@@ -293,7 +293,7 @@ solutions.withoutX2 = function (str) {
 
 // String-2
 
-solutions.doubleChar = function (str) {
+solutions.doubleChar = function doubleChar(str) {
   let dStr = "";
 
   for (let i = 0; i < str.length; i++){
@@ -302,7 +302,7 @@ solutions.doubleChar = function (str) {
   return dStr;
 }
 
-solutions.countHi = function (str) {
+solutions.countHi = function countHi(str) {
 
   let count = 0;
 
@@ -315,7 +315,7 @@ solutions.countHi = function (str) {
 
 }
 
-solutions.catDog = function (str) {
+solutions.catDog = function catDog(str) {
   let cat = 0;
   let dog = 0;
 
@@ -331,7 +331,7 @@ solutions.catDog = function (str) {
     return cat == dog;
 }
 
-solutions.countCode = function (str) {
+solutions.countCode = function countCode(str) {
   let count = 0;
 
     for (let i = 0; i < str.length; i++){
@@ -343,7 +343,7 @@ solutions.countCode = function (str) {
     return count;
 }
 
-solutions.endOther = function (a, b) {
+solutions.endOther = function endOther(a, b) {
   let short = "";
   let long = "";
 
@@ -364,7 +364,7 @@ solutions.endOther = function (a, b) {
     return longEnd == short;
 }
 
-solutions.xyzThere = function (str) {
+solutions.xyzThere = function xyzThere(str) {
   let x = "xyz";
   for (let i = 0; i < str.length; i++){
     if(str.substring(i, i+3) == x && str.charAt(i-1, i) != "."){
@@ -374,7 +374,7 @@ solutions.xyzThere = function (str) {
     return false;
 }
 
-solutions.bobThere = function (str) {
+solutions.bobThere = function bobThere(str) {
   for (let i = 0; i < str.length; i++){
       if (str.charAt(i) == "b" && str.charAt(i+2) == "b"){
           return true;
@@ -383,7 +383,7 @@ solutions.bobThere = function (str) {
     return false;
 }
 
-solutions.xyBalance = function (str) {
+solutions.xyBalance = function xyBalance(str) {
     let y = false;
     //backwards loop
     for(let i = str.length - 1; i >= 0; i--) {
@@ -397,7 +397,7 @@ solutions.xyBalance = function (str) {
     return true;
 }
 
-solutions.mixString = function (a, b) {
+solutions.mixString = function mixString(a, b) {
     let large = "";
     let newStr = "";
 
@@ -419,7 +419,7 @@ solutions.mixString = function (a, b) {
     return newStr;
 }
 
-solutions.repeatEnd = function (str, n) {
+solutions.repeatEnd = function repeatEnd(str, n) {
     let retStr = "";
   let sub = str.substring(str.length - n);
 
@@ -431,7 +431,7 @@ solutions.repeatEnd = function (str, n) {
     return retStr;
 }
 
-solutions.repeatFront = function (str, n) {
+solutions.repeatFront = function repeatFront(str, n) {
 
     let nu = "";
 
@@ -460,7 +460,7 @@ solutions.repeatSeparator = function repeatSeparator(word, sep, count) {
     return nu;
 }
 
-solutions.prefixAgain = function (str, n) {
+solutions.prefixAgain = function prefixAgain(str, n) {
     let prefix = str.substring(0, n);
 
     for (let i = str.length; i > n; i--){
@@ -471,7 +471,7 @@ solutions.prefixAgain = function (str, n) {
     return false;
 }
 
-solutions.xyzMiddle = function (str) {
+solutions.xyzMiddle = function xyzMiddle(str) {
     if(str.length < 3)
         return false;
 
@@ -486,7 +486,7 @@ solutions.xyzMiddle = function (str) {
     return str.substring(start2, start2 + 3) == "xyz";
 }
 
-solutions.getSandwich = function (str) {
+solutions.getSandwich = function getSandwich(str) {
   let temp1 = "";
   let i1 = 0;
     for (let i = 0; i < str.length; i++){
@@ -515,7 +515,7 @@ solutions.getSandwich = function (str) {
     return res;
 }
 
-solutions.sameStarChar = function (str) {
+solutions.sameStarChar = function sameStarChar(str) {
 
     for (let i = 1; i < str.length - 1; i++){
         if (str.charAt(i) == '*' && str.charAt(i-1) != str.charAt(i+1)){
@@ -525,7 +525,7 @@ solutions.sameStarChar = function (str) {
     return true;
 }
 
-solutions.oneTwo = function (str) {
+solutions.oneTwo = function oneTwo(str) {
     let nust = "";
 
     for (let i = 0; i < str.length-1; i+= 3){
@@ -538,7 +538,7 @@ solutions.oneTwo = function (str) {
     return nust;
 }
 
-solutions.zipZap = function (str) {
+solutions.zipZap = function zipZap(str) {
   let nust = "";
   for (let i = 0; i < str.length; i++){
     if (str[i-1] != "z" || str[i+1] != "p"){
@@ -548,7 +548,7 @@ solutions.zipZap = function (str) {
   return nust;
 }
 
-solutions.starOut = function (str) {
+solutions.starOut = function starOut(str) {
     if(str.length < 1)
         return "";
 
@@ -589,7 +589,7 @@ solutions.starOut = function (str) {
       return x.replace(/,/g, "");
 }
 
-solutions.plusOut = function (str, word) {
+solutions.plusOut = function plusOut(str, word) {
   let slen = str.length;
   let wlen = word.length;
   let fin = "";
@@ -610,7 +610,7 @@ solutions.plusOut = function (str, word) {
   return fin;
 }
 
-solutions.wordEnds = function (str, word){
+solutions.wordEnds = function wordEnds(str, word){
   let slen = str.length;
   let wlen = word.length;
   let res = "";
@@ -642,7 +642,7 @@ solutions.wordEnds = function (str, word){
 
 // String-3
 
-solutions.countYZ = function (str){
+solutions.countYZ = function countYZ(str){
   let count=0;
   for (let i = 0; i < str.length; i++) {
     if (!str[i].match(/[a-z]/i) || str.charAt(i) == " ") {
@@ -660,7 +660,7 @@ solutions.countYZ = function (str){
   return count;
 }
 
-solutions.withoutString = function (base, remove){
+solutions.withoutString = function withoutString(base, remove){
 
   let rlen = remove.length;
 
@@ -680,7 +680,7 @@ solutions.withoutString = function (base, remove){
   return res;
 }
 
-solutions.equalIsNot = function (str){
+solutions.equalIsNot = function equalIsNot(str){
   let is = "is";
   let not = "not";
 
@@ -704,7 +704,7 @@ solutions.equalIsNot = function (str){
 
 }
 
-solutions.gHappy = function (str) {
+solutions.gHappy = function gHappy(str) {
 
   for (let i = 0; i < str.length; i++){
     if (str[i] == "g" && (str[i-1] != "g" && str[i+1] != "g")){
@@ -727,7 +727,7 @@ solutions.countTriple = function countTriple(str) {
   return count;
 }
 
-solutions.sumDigits = function (str) {
+solutions.sumDigits = function sumDigits(str) {
 
   let add = (a, b) => a+b;
 
@@ -747,7 +747,7 @@ solutions.sumDigits = function (str) {
     }
 }
 
-solutions.sameEnds = function (string) {
+solutions.sameEnds = function sameEnds(string) {
     let start = Math.ceil(string.length/2);
     let end = string.length/2;
 
@@ -762,7 +762,7 @@ solutions.sameEnds = function (string) {
   return "";
 }
 
-solutions.mirrorEnds = function (string) {
+solutions.mirrorEnds = function mirrorEnds(string) {
     let result = "";
 
     for (let i = 0; i < string.length; i++) {
@@ -776,7 +776,7 @@ solutions.mirrorEnds = function (string) {
     return result;
 }
 
-solutions.maxBlock = function (str) {
+solutions.maxBlock = function maxBlock(str) {
   let count = 0;
   let stick = 1;
 
@@ -796,7 +796,7 @@ solutions.maxBlock = function (str) {
 
 }
 
-solutions.sumNumbers = function (str) {
+solutions.sumNumbers = function sumNumbers(str) {
 
   let len = str.length;
   let temp = "";
@@ -816,7 +816,7 @@ solutions.sumNumbers = function (str) {
   return sum;
 }
 
-solutions.notReplace = function (str) {
+solutions.notReplace = function notReplace(str) {
 
   let result = "";
 

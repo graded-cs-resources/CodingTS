@@ -3,46 +3,46 @@
 
 let solutions = {};
 
-solutions.firstLast6 = function (nums) {
+solutions.firstLast6 = function firstLast6(nums) {
     let end = nums.length - 1;
     return nums[0] == 6 || nums[end] == 6;
   }
   
-  solutions.sameFirstLast = function (nums) {
+  solutions.sameFirstLast = function sameFirstLast(nums) {
       let end = nums.length - 1;
      if (nums.length >= 1){
          return nums[0] == nums[end];
      } else {return false;}
   }
   
-  solutions.makePi = function () {
+  solutions.makePi = function makePi() {
       let nums = [3, 1, 4];
       return nums;
   }
   
-  solutions.commonEnd = function (a, b) {
+  solutions.commonEnd = function commonEnd(a, b) {
     if (a.length >= 1 && b.length >= 1){
         return (a[0] == b[0] || a[a.length - 1] == b[b.length - 1]);
     }
       return false;
   }
   
-  solutions.sum3 = function (nums) {
+  solutions.sum3 = function sum3(nums) {
     return nums[0] + nums[1] + nums[2];
   }
   
-  solutions.rotateLeft3 = function (nums) {
+  solutions.rotateLeft3 = function rotateLeft3(nums) {
       let rotatedArray = nums.slice();
       let first = rotatedArray.shift();
       rotatedArray.push(first);
       return rotatedArray;
   }
   
-  solutions.reverse3 = function (nums) {
+  solutions.reverse3 = function reverse3(nums) {
     return nums.reverse();
   }
   
-  solutions.maxEnd3 = function (nums) {
+  solutions.maxEnd3 = function maxEnd3(nums) {
       let max = nums[0] > nums[2] ? nums[0] : nums[2];
   
       nums[0] = max;
@@ -52,7 +52,7 @@ solutions.firstLast6 = function (nums) {
       return nums;
   }
   
-  solutions.sum2 =  function (nums) {
+  solutions.sum2 = function sum2(nums) {
       if (nums.length == 0){
           return 0;
       }
@@ -64,21 +64,21 @@ solutions.firstLast6 = function (nums) {
     }
   }
   
-  solutions.middleWay = function (a, b) {
+  solutions.middleWay = function middleWay(a, b) {
     let newArr = []
     newArr.push(a[1], b[1]);
   
       return newArr;
   }
   
-  solutions.makeEnds =  function (nums) {
+  solutions.makeEnds = function makeEnds(nums) {
        let nArr = [];
        nArr.push(nums[0], nums[nums.length - 1]);
   
        return nArr;
   }
   
-  solutions.has23 = function (nums) {
+  solutions.has23 = function has23(nums) {
   
       if (nums.indexOf(2) != -1 || nums.indexOf(3) != -1){
          return true
@@ -87,7 +87,7 @@ solutions.firstLast6 = function (nums) {
       }
   }
   
-  solutions.no23 = function (nums) {
+  solutions.no23 = function no23(nums) {
     if (nums.indexOf(2) == -1 && nums.indexOf(3) == -1){
         return true;
     } else {
@@ -95,7 +95,7 @@ solutions.firstLast6 = function (nums) {
     }
   }
   
-  solutions.makeLast = function (nums) {
+  solutions.makeLast = function makeLast(nums) {
     let i = 0;
     let newNums = [];
     let last = nums.slice(nums.length - 1); //calling slice on array returns array with 'sliced' portion
@@ -110,7 +110,7 @@ solutions.firstLast6 = function (nums) {
       return newNums;
   }
   
-  solutions.double23 = function (nums) {
+  solutions.double23 = function double23(nums) {
     if (nums.length < 2) {
         return false;
     }
@@ -121,7 +121,7 @@ solutions.firstLast6 = function (nums) {
     }
   }
   
-  solutions.fix23 = function (nums) {
+  solutions.fix23 = function fix23(nums) {
     for (let i = 0; i < nums.length; i++){
         if (nums[i] == 2 && nums[i+1] == 3) {
            let tri = nums.indexOf(3);
@@ -131,7 +131,7 @@ solutions.firstLast6 = function (nums) {
     return nums;
   }
   
-  solutions.findTheMedian = function (nums) {
+  solutions.findTheMedian = function findTheMedian(nums) {
     if (nums.length % 2 === 1){
       return nums[(nums.length-1)/2];
     }
@@ -142,7 +142,7 @@ solutions.firstLast6 = function (nums) {
   
   
   
-  solutions.start1 = function (a, b) {
+  solutions.start1 = function start1(a, b) {
     let count = 0;
      if (a[0] == 1) {
       count += 1;
@@ -155,14 +155,14 @@ solutions.firstLast6 = function (nums) {
      return count;
   }
   
-  solutions.biggerTwo = function (a, b) {
+  solutions.biggerTwo = function biggerTwo(a, b) {
     if (b[0] + b[1] > a[0] + a[1]) {
         return b;
     }
     return a;
   }
   
-  solutions.makeMiddle = function (nums) {
+  solutions.makeMiddle = function makeMiddle(nums) {
     let first_half = nums.splice(0, nums.length/2);
   
     let one = first_half.pop();
@@ -171,7 +171,7 @@ solutions.firstLast6 = function (nums) {
     return [one, two]
   }
   
-  solutions.plusTwo = function (a, b) {
+  solutions.plusTwo = function plusTwo(a, b) {
     let duoArr = new Array();
     duoArr[0]= a[0];
     duoArr[1]= a[1];
@@ -181,7 +181,7 @@ solutions.firstLast6 = function (nums) {
     return duoArr;
   }
   
-  solutions.swapEnds = function (nums) {
+  solutions.swapEnds = function swapEnds(nums) {
     if (nums.length < 2) {
       return nums;
     }
@@ -195,7 +195,7 @@ solutions.firstLast6 = function (nums) {
   return nums;
   }
   
-  solutions.findLowestIndex = function (nums) {
+  solutions.findLowestIndex = function findLowestIndex(nums) {
     let minVal = nums[0];
     let minValIndex = 0;
     for (let i = 0; i < nums.length; i++){
@@ -212,12 +212,12 @@ solutions.firstLast6 = function (nums) {
   
   
   
-  solutions.midThree = function (nums) {
+  solutions.midThree = function midThree(nums) {
        let x = Math.floor(nums.length/2); // since 5/2 is 2.5, floor gives 2
        return nums.slice(x-1, x+2);
   }
   
-  solutions.maxTriple = function (nums) {
+  solutions.maxTriple = function maxTriple(nums) {
     let mid = Math.floor(nums.length/2);
     let start = nums[0]
     let end = nums[nums.length - 1];
@@ -232,14 +232,14 @@ solutions.firstLast6 = function (nums) {
     }
   }
   
-  solutions.frontPiece = function (nums) {
+  solutions.frontPiece = function frontPiece(nums) {
     if (nums.length < 2) {
         return nums;
     }
     return [nums[0], nums[1]];
   }
   
-  solutions.unlucky1 = function (nums) {
+  solutions.unlucky1 = function unlucky1(nums) {
   
     let sections = [
       nums.slice(-2),
@@ -255,13 +255,13 @@ solutions.firstLast6 = function (nums) {
     return false;
   }
   
-  solutions.make2 = function (a, b) {
+  solutions.make2 = function make2(a, b) {
     let newAr = a.concat(b);
   
       return [newAr[0], newAr[1]];
   }
   
-  solutions.front11 = function (a, b) {
+  solutions.front11 = function front11(a, b) {
     let sections = [
       a,
       b
@@ -282,7 +282,7 @@ solutions.firstLast6 = function (nums) {
   
   // Array-2
   
-  solutions.countEvens = function (nums) {
+  solutions.countEvens = function countEvens(nums) {
     let count = 0;
   
       for (let i = 0; i < nums.length; i++){
@@ -293,14 +293,14 @@ solutions.firstLast6 = function (nums) {
       return count;
   }
   
-  solutions.bigDiff = function (nums) {
+  solutions.bigDiff = function bigDiff(nums) {
     let minn = Math.min(...nums);
     let maxx = Math.max(...nums);
   
       return Math.abs(maxx - minn);
   }
   
-  solutions.centeredAverage = function (nums) {
+  solutions.centeredAverage = function centeredAverage(nums) {
       let minn = Math.min(...nums);
       let minIn = nums.indexOf(minn);
       nums.splice(minIn, 1);
@@ -316,7 +316,7 @@ solutions.firstLast6 = function (nums) {
       return total / nums.length;
   }
   
-  solutions.sum13 = function (nums) {
+  solutions.sum13 = function sum13(nums) {
       let pre13 = [];
     for (let i = 0; i < nums.length; i++){
        if(nums[i] == 13 || nums[i-1]==13) {
@@ -329,7 +329,7 @@ solutions.firstLast6 = function (nums) {
     return sum;
   }
   
-  solutions.sum67 = function (nums) {
+  solutions.sum67 = function sum67(nums) {
     let summ = 0;
   
     for (let i = 0; i < nums.length; i++){
@@ -344,7 +344,7 @@ solutions.firstLast6 = function (nums) {
     return summ;
   }
   
-  solutions.has22 = function (nums) {
+  solutions.has22 = function has22(nums) {
      for (let i = 0; i < nums.length; i++){
           if (nums[i] == 2 && nums[i+1] == 2){
               return true;
@@ -353,7 +353,7 @@ solutions.firstLast6 = function (nums) {
       return false;
   }
   
-  solutions.lucky13 = function (nums) {
+  solutions.lucky13 = function lucky13(nums) {
     for(let i = 0; i < nums.length; i++){
       if (nums[i] == 1 || nums[i] == 3){
           return false;
@@ -363,7 +363,7 @@ solutions.firstLast6 = function (nums) {
   
   }
   
-  solutions.sum28 = function (nums) {
+  solutions.sum28 = function sum28(nums) {
     let count = 0;
   
       for(let i = 0; i < nums.length; i++){
@@ -374,7 +374,7 @@ solutions.firstLast6 = function (nums) {
       return count == 8;
   }
   
-  solutions.more14 = function (nums) {
+  solutions.more14 = function more14(nums) {
   
       let one = 0;
       let four = 0;
@@ -391,7 +391,7 @@ solutions.firstLast6 = function (nums) {
       return one > four;
   }
   
-  solutions.fizzArray = function (n) {
+  solutions.fizzArray = function fizzArray(n) {
     let newA = [];
       for (let i = 0; i < n; i++){
           newA[i] = i;
@@ -399,14 +399,14 @@ solutions.firstLast6 = function (nums) {
       return newA;
   }
   
-  solutions.prependSum = function (nums) {
+  solutions.prependSum = function prependSum(nums) {
     nums.unshift(nums.shift() + nums.shift());
     return nums;
   }
   
   
   
-  solutions.only14 = function (nums) {
+  solutions.only14 = function only14(nums) {
   
     for (let i = 0; i < nums.length; i++){
         if (nums[i] != 4 && nums[i] != 1){
@@ -416,7 +416,7 @@ solutions.firstLast6 = function (nums) {
       return true;
   }
   
-  solutions.fizzArray2 = function (n) {
+  solutions.fizzArray2 = function fizzArray2(n) {
       let nu = [];
       for (let i = 0; i < n; i++){
           nu[i] = i.toString();
@@ -424,7 +424,7 @@ solutions.firstLast6 = function (nums) {
       return nu;
   }
   
-  solutions.no14 = function (nums) {
+  solutions.no14 = function no14(nums) {
   let has1 = false;
   let has4 = false;
   
@@ -441,7 +441,7 @@ solutions.firstLast6 = function (nums) {
       return (!has1 || !has4);
   }
   
-  solutions.isEverywhere = function (nums, val) {
+  solutions.isEverywhere = function isEverywhere(nums, val) {
    for (let i = 0; i < nums.length-1; i++){
        if (nums[i] != val && nums[i+1] != val){
            return false;
@@ -450,7 +450,7 @@ solutions.firstLast6 = function (nums) {
       return true;
   }
   
-  solutions.either24 = function (nums) {
+  solutions.either24 = function either24(nums) {
       let has22 = false;
       let has44 = false;
   
@@ -465,7 +465,7 @@ solutions.firstLast6 = function (nums) {
       return has22 != has44;
   }
   
-  solutions.matchUp = function (nums1, nums2) {
+  solutions.matchUp = function matchUp(nums1, nums2) {
     let count = 0;
   
       for (let i = 0; i < nums1.length; i++){
@@ -477,7 +477,7 @@ solutions.firstLast6 = function (nums) {
       return count;
   }
   
-  solutions.has77 = function (nums) {
+  solutions.has77 = function has77(nums) {
     for (let i = 0; i < nums.length - 1; i++){
         if ((nums[i] == 7 && nums[i+1] == 7) || (nums[i] == 7 && nums[i+2] == 7)) {
             return true;
@@ -486,7 +486,7 @@ solutions.firstLast6 = function (nums) {
       return false;
   }
   
-  solutions.has12 = function (nums) {
+  solutions.has12 = function has12(nums) {
     let has1 = false;
   
       for (let i = 0; i < nums.length; i++){
@@ -501,7 +501,7 @@ solutions.firstLast6 = function (nums) {
       return false;
   }
   
-  solutions.modThree = function (nums) {
+  solutions.modThree = function modThree(nums) {
     for (let i = 0; i < nums.length - 1; i++){
         if (nums[i]%2 == nums[i+1]%2 && nums[i+1]%2 == nums[i+2]%2){
             return true;
@@ -510,7 +510,7 @@ solutions.firstLast6 = function (nums) {
       return false;
   }
   
-  solutions.haveThree = function (nums) {
+  solutions.haveThree = function haveThree(nums) {
     let three = 0;
     for (let i = 0; i < nums.length; i++){
         if (nums[i] == 3) {
@@ -524,7 +524,7 @@ solutions.firstLast6 = function (nums) {
       return three == 3;
   }
   
-  solutions.twoTwo = function (nums) {
+  solutions.twoTwo = function twoTwo(nums) {
     for (let i = 0; i < nums.length; i++){
        if(nums[i] == 2){
            if (nums[i+1] != 2){
@@ -536,14 +536,14 @@ solutions.firstLast6 = function (nums) {
       return true;
   }
   
-  solutions.sameEnds = function (nums, len) {
+  solutions.sameEnds = function sameEnds(nums, len) {
     let front = nums.slice(0, len);
     let end = nums.slice(nums.length - len);
   
     return front.toString() == end.toString();
   }
   
-  solutions.tripleUp = function (nums) {
+  solutions.tripleUp = function tripleUp(nums) {
     for (let i = nums.length; i > 0; i--){
         if (nums[i] - nums[i-1] == 1){
             if (nums[i-1] - nums[i-2] == 1){
@@ -562,7 +562,7 @@ solutions.firstLast6 = function (nums) {
       return newA;
   }
   
-  solutions.shiftLeft = function (nums) {
+  solutions.shiftLeft = function shiftLeft(nums) {
   
       if (nums.length < 1) {
           return nums;
@@ -575,7 +575,7 @@ solutions.firstLast6 = function (nums) {
       return nums;
   }
   
-  solutions.tenRun = function (nums) {
+  solutions.tenRun = function tenRun(nums) {
       let current;
       let i = 0;
   
@@ -599,7 +599,7 @@ solutions.firstLast6 = function (nums) {
       return nums;
   }
   
-  solutions.pre4 = function (nums) {
+  solutions.pre4 = function pre4(nums) {
   
     let b44 = [];
   
@@ -612,7 +612,7 @@ solutions.firstLast6 = function (nums) {
     return b44;
   }
   
-  solutions.post4 = function (nums) {
+  solutions.post4 = function post4(nums) {
     let aft4 = [];
   
       let i = nums.length-1;
@@ -623,7 +623,7 @@ solutions.firstLast6 = function (nums) {
       return aft4.reverse();
   }
   
-  solutions.notAlone = function (nums, val) {
+  solutions.notAlone = function notAlone(nums, val) {
     for (let i = 0; i < nums.length-1; i++) {
         if (nums[i] == val){
           if (nums[i+1] == undefined){
@@ -646,7 +646,7 @@ solutions.firstLast6 = function (nums) {
       return nums;
   }
   
-  solutions.zeroFront = function (nums) {
+  solutions.zeroFront = function zeroFront(nums) {
       if(nums.length == 0)
       return nums;
   
@@ -667,7 +667,7 @@ solutions.firstLast6 = function (nums) {
       return nums;
   }
   
-  solutions.withoutTen = function (nums) {
+  solutions.withoutTen = function withoutTen(nums) {
       let nlen = nums.length;
   
       let newA = nums.filter(notten);
@@ -689,7 +689,7 @@ solutions.firstLast6 = function (nums) {
       return num != 10;
   }
   
-  solutions.zeroMax = function (nums) {
+  solutions.zeroMax = function zeroMax(nums) {
       let odd = 0;
       for (let i = nums.length-1; i >= 0; i--){
   
@@ -706,7 +706,7 @@ solutions.firstLast6 = function (nums) {
       return nums;
   }
   
-  solutions.evenOdd = function (nums) {
+  solutions.evenOdd = function evenOdd(nums) {
     let even = nums.filter(isEven);
     let odd = nums.filter(isOdd);
   
@@ -723,7 +723,7 @@ solutions.firstLast6 = function (nums) {
       return num%2 != 0;
   }
   
-  solutions.fizzBuzz = function (start, end) {
+  solutions.fizzBuzz = function fizzBuzz(start, end) {
   
     let strArray = [];
   
@@ -744,7 +744,7 @@ solutions.firstLast6 = function (nums) {
   
   // Array-3
   
-  solutions.maxSpan = function (nums) {
+  solutions.maxSpan = function maxSpan(nums) {
       let max = 0;
   
       for(let i = 0; i < nums.length; i++) {
@@ -763,7 +763,7 @@ solutions.firstLast6 = function (nums) {
       return max;
   }
   
-  solutions.fix34 = function (nums) {
+  solutions.fix34 = function fix34(nums) {
       let i = 0;
   
       while(i < nums.length && nums[i] != 3)
@@ -789,7 +789,7 @@ solutions.firstLast6 = function (nums) {
       return nums;
   }
   
-  solutions.fix45 = function (nums) {
+  solutions.fix45 = function fix45(nums) {
   
     let i = 0;
     let j = 0;
@@ -812,7 +812,7 @@ solutions.firstLast6 = function (nums) {
       return nums;
   }
   
-  solutions.canBalance = function (nums) {
+  solutions.canBalance = function canBalance(nums) {
       let first = 0;
       let second = 0;
   
@@ -832,7 +832,7 @@ solutions.firstLast6 = function (nums) {
      return false;
   }
   
-  solutions.linearIn = function (outer, inner) {
+  solutions.linearIn = function linearIn(outer, inner) {
     //index for inner array, also acts as a 'count' variable
    let j = 0;
   
@@ -847,7 +847,7 @@ solutions.firstLast6 = function (nums) {
   
   }
   
-  solutions.squareUp = function (n) {
+  solutions.squareUp = function squareUp(n) {
   
     let subArray = [];
     let j = n;
@@ -865,7 +865,7 @@ solutions.firstLast6 = function (nums) {
     return output;
   }
   
-  solutions.seriesUp = function (n) {
+  solutions.seriesUp = function seriesUp(n) {
     let modArr = [];
   
     for (let i = 0; i < n; i++){
@@ -881,7 +881,7 @@ solutions.firstLast6 = function (nums) {
     return modArr;
   }
   
-  solutions.maxMirror = function (nums) {
+  solutions.maxMirror = function maxMirror(nums) {
   
   function matchesForN(nums, n) {
   // initially lets solve for n=3, then we can generalise to any n
@@ -945,7 +945,7 @@ solutions.firstLast6 = function (nums) {
     }
   }
   
-  solutions.countClumps = function (nums){
+  solutions.countClumps = function countClumps(nums){
     let yardStick = -1;
     let clumps = 0;
   

@@ -2,7 +2,7 @@
 
 let solutions = {};
 
-solutions.scoresIncreasing = function (scores) {
+solutions.scoresIncreasing = function scoresIncreasing(scores) {
 
     for (let i = 1; i < scores.length; i++){
       if (scores[i] != scores[i-1] && scores[i] < scores[i-1]){
@@ -12,7 +12,7 @@ solutions.scoresIncreasing = function (scores) {
     return true;
   }
   
-  solutions.scores100 = function (scores) {
+  solutions.scores100 = function scores100(scores) {
     let count=0;
   
     for (let i = 0; i < scores.length; i++){
@@ -23,7 +23,7 @@ solutions.scoresIncreasing = function (scores) {
     return count > 0;
   }
   
-  solutions.scoresClump = function (scores) {
+  solutions.scoresClump = function scoresClump(scores) {
   
     for (let i = 0; i < scores.length-1; i++){
       if (scores[i+2] - scores[i] <= 2){
@@ -33,7 +33,7 @@ solutions.scoresIncreasing = function (scores) {
     return false;
   }
   
-  solutions.scoresAverage = function (scores) {
+  solutions.scoresAverage = function scoresAverage(scores) {
   
     function average(nums){
       let sum = 0;
@@ -64,7 +64,7 @@ solutions.scoresIncreasing = function (scores) {
     return av2
   }
   
-  solutions.wordsCount = function (words, len) {
+  solutions.wordsCount = function wordsCount(words, len) {
   
     let count = 0;
     for (let i = 0; i < words.length; i++){
@@ -75,7 +75,7 @@ solutions.scoresIncreasing = function (scores) {
     return count;
   }
   
-  solutions.wordsFront = function (words, n) {
+  solutions.wordsFront = function wordsFront(words, n) {
   
     let arr = [];
     for (let i = 0; i < n; i++){
@@ -84,7 +84,7 @@ solutions.scoresIncreasing = function (scores) {
     return arr;
   }
   
-  solutions.wordsWithoutList = function (words, len) {
+  solutions.wordsWithoutList = function wordsWithoutList(words, len) {
     let arr = [];
   
     for (let i = 0; i < words.length; i++){
@@ -95,7 +95,7 @@ solutions.scoresIncreasing = function (scores) {
     return arr;
   }
   
-  solutions.hasOne = function (n) {
+  solutions.hasOne = function hasOne(n) {
   
       let str = n.toString()
   
@@ -109,7 +109,7 @@ solutions.scoresIncreasing = function (scores) {
       return false;
   }
   
-  solutions.dividesSelf = function (n) {
+  solutions.dividesSelf = function dividesSelf(n) {
     let num = n.toString();
   
     let j = num.length - 1;
@@ -123,7 +123,7 @@ solutions.scoresIncreasing = function (scores) {
     return true;
   }
   
-  solutions.copyEvens = function (nums, count) {
+  solutions.copyEvens = function copyEvens(nums, count) {
   
    let erray = [];
    let j = count;
@@ -138,7 +138,7 @@ solutions.scoresIncreasing = function (scores) {
    return erray;
   }
   
-  solutions.copyEndy = function (nums, count) {
+  solutions.copyEndy = function copyEndy(nums, count) {
     let newArray = [];
     for (let i=0; i<nums.length; i++) {
       let n = nums[i];
@@ -152,7 +152,7 @@ solutions.scoresIncreasing = function (scores) {
     return newArray;
   }
   
-  solutions.matchUp = function (a, b) {
+  solutions.matchUp = function matchUp(a, b) {
       let count = 0;
   
       for(let i = 0; i < a.length; i++) {
@@ -165,7 +165,7 @@ solutions.scoresIncreasing = function (scores) {
       return count;
   }
   
-  solutions.scoreUp = function (key, answers) {
+  solutions.scoreUp = function scoreUp(key, answers) {
     let score = 0;
   
     for (let i = 0; i < key.length; i++){
@@ -181,7 +181,7 @@ solutions.scoresIncreasing = function (scores) {
     return score;
   }
   
-  solutions.wordsWithout = function (words, target){
+  solutions.wordsWithout = function wordsWithout(words, target){
      let nuarr = [];
   
      for (let i = 0; i < words.length; i++){
@@ -192,7 +192,7 @@ solutions.scoresIncreasing = function (scores) {
      return nuarr;
   }
   
-  solutions.scoresSpecial = function (a, b){
+  solutions.scoresSpecial = function scoresSpecial(a, b){
     function largest(x){
   
       let big = 0;
@@ -210,7 +210,7 @@ solutions.scoresIncreasing = function (scores) {
      return ares + bres;
   }
   
-  solutions.sumHeights = function (heights, start, end) {
+  solutions.sumHeights = function sumHeights(heights, start, end) {
     let res = 0;
     for (let i = start; i < end; i++){
         res += Math.abs(heights[i] - heights[i+1])
@@ -218,7 +218,7 @@ solutions.scoresIncreasing = function (scores) {
     return res;
   }
   
-  solutions.sumHeights2 = function (heights, start, end) {
+  solutions.sumHeights2 = function sumHeights2(heights, start, end) {
   
     let sum = 0;
     for (let i = start; i < end; i++){
@@ -231,7 +231,7 @@ solutions.scoresIncreasing = function (scores) {
     return sum;
   }
   
-  solutions.bigHeights = function (heights, start, end) {
+  solutions.bigHeights = function bigHeights(heights, start, end) {
     let count = 0;
     for (let i = start; i < end; i++){
         if (Math.abs(heights[i] - heights[i+1]) >= 5){
@@ -241,7 +241,7 @@ solutions.scoresIncreasing = function (scores) {
     return count;
   }
   
-  solutions.userCompare = function (aName, aId, bName, bId) {
+  solutions.userCompare = function userCompare(aName, aId, bName, bId) {
   
     if (aName < bName){
         return -1;
@@ -255,7 +255,7 @@ solutions.scoresIncreasing = function (scores) {
       return 0;
   }
   
-  solutions.mergeTwo = function (a, b, n) {
+  solutions.mergeTwo = function mergeTwo(a, b, n) {
     let abinit = a.concat(b);
     let ab = abinit.sort();
   
@@ -278,7 +278,7 @@ solutions.scoresIncreasing = function (scores) {
     return arr.split("");
   }
   
-  solutions.commonTwo = function (a, b) {
+  solutions.commonTwo = function commonTwo(a, b) {
      let str = "";
      let count = 0;
   

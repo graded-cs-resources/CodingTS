@@ -3,15 +3,15 @@
 
 let solutions = {};
 
-solutions.stringTimes = function (str, n) {
+solutions.stringTimes = function stringTimes(str, n) {
     return str.repeat(n);
   };
   
-solutions.sleepIn = function (weekday, vacation) {
+solutions.sleepIn = function sleepIn(weekday, vacation) {
   return !weekday || vacation;
 };
 
-solutions.diff21 = function (n) {
+solutions.diff21 = function diff21(n) {
   if (n <= 21) {
     return 21 - n;
   } else {
@@ -19,23 +19,23 @@ solutions.diff21 = function (n) {
   }
 };
 
-solutions.nearHundred = function (n) {
+solutions.nearHundred = function nearHundred(n) {
   return ((Math.abs(100 - n) <= 10) ||
       (Math.abs(200 - n) <= 10));
 };
 
-solutions.missingChar = function (str, n) {
+solutions.missingChar = function missingChar(str, n) {
   front = str.substring(0, n);
   back = str.substring(n + 1, str.length);
   return front + back;
 };
 
-solutions.backAround = function (str) {
+solutions.backAround = function backAround(str) {
   last = str.substring(str.length - 1);
   return last + str + last;
 };
 
-solutions.startHi = function (str) {
+solutions.startHi = function startHi(str) {
   if (str.length < 2) {
     return false;
   }
@@ -47,11 +47,11 @@ solutions.startHi = function (str) {
   }
 };
 
-solutions.hasTeen = function (a, b, c) {
+solutions.hasTeen = function hasTeen(a, b, c) {
   return (a >= 13 && a <= 19) || (b >= 13 && b <= 19) || (c >= 13 && c <= 19);
 };
 
-solutions.mixStart = function (str) {
+solutions.mixStart = function mixStart(str) {
   if (str.length < 3) {
     return false;
   }
@@ -63,7 +63,7 @@ solutions.mixStart = function (str) {
   }
 };
 
-solutions.close10 = function (a, b) {
+solutions.close10 = function close10(a, b) {
   aDiff = Math.abs(a - 10);
   bDiff = Math.abs(b - 10);
 
@@ -76,7 +76,7 @@ solutions.close10 = function (a, b) {
   return 0;
 };
 
-solutions.stringE = function (str) {
+solutions.stringE = function stringE(str) {
   count = 0;
   for (let i = 0; i < str.length; i++) {
     if (str.charAt(i) == 'e') {
@@ -86,7 +86,7 @@ solutions.stringE = function (str) {
   return (count >= 1 && count <= 3);
 };
 
-solutions.everyNth = function (str, n) {
+solutions.everyNth = function everyNth(str, n) {
   result = '';
   for (let i = 0; i < str.length; i = i + n) {
     result = result + str.charAt(i);
@@ -94,7 +94,7 @@ solutions.everyNth = function (str, n) {
   return result;
 };
 
-solutions.monkeyTrouble = function (aSmile, bSmile) {
+solutions.monkeyTrouble = function monkeyTrouble(aSmile, bSmile) {
   if (aSmile && bSmile) {
     return true;
   }
@@ -104,7 +104,7 @@ solutions.monkeyTrouble = function (aSmile, bSmile) {
   return false;
 };
 
-solutions.parrotTrouble = function (talking, hour) {
+solutions.parrotTrouble = function parrotTrouble(talking, hour) {
   if (talking === true && (hour < 7 || hour > 20)) {
     return true;
   } else {
@@ -112,7 +112,7 @@ solutions.parrotTrouble = function (talking, hour) {
   }
 };
 
-solutions.posNeg = function (a, b, negative) {
+solutions.posNeg = function posNeg(a, b, negative) {
   if (negative === true) {
     return a < 0 && b < 0;
   }
@@ -123,7 +123,7 @@ solutions.posNeg = function (a, b, negative) {
   }
 };
 
-solutions.frontBack = function (str) {
+solutions.frontBack = function frontBack(str) {
   if (str.length <= 1) {
     return str;
   }
@@ -132,7 +132,7 @@ solutions.frontBack = function (str) {
   return (str.charAt(str.length - 1)) + mid + str.charAt(0);
 };
 
-solutions.or35 = function (n) {
+solutions.or35 = function or35(n) {
   if (n % 3 == 0 || n % 5 == 0) {
     return true;
   } else {
@@ -140,14 +140,14 @@ solutions.or35 = function (n) {
   }
 };
 
-solutions.icyHot = function (temp1, temp2) {
+solutions.icyHot = function icyHot(temp1, temp2) {
   if (temp1 < 0 && temp2 > 100 || temp2 < 0 && temp1 > 100) {
     return true;
   }
   return false;
 };
 
-solutions.loneTeen = function (a, b) {
+solutions.loneTeen = function loneTeen(a, b) {
   const isTeen = function (num) {
     return num >= 13 && num <= 19;
   };
@@ -156,7 +156,7 @@ solutions.loneTeen = function (a, b) {
   return isTeenA && !isTeenB || !isTeenA && isTeenB;
 };
 
-solutions.startOz = function (str) {
+solutions.startOz = function startOz(str) {
   result = '';
 
   if (str.length >= 1 && str.charAt(0) == 'o') {
@@ -168,7 +168,7 @@ solutions.startOz = function (str) {
   return result;
 };
 
-solutions.in3050 = function (a, b) {
+solutions.in3050 = function in3050(a, b) {
   if ((a >= 30 && a <= 40 && b >= 30 && b <= 40) || (a >= 40 && a <= 50 && b >= 40 && b <= 50)) {
     return true;
   } else {
@@ -176,11 +176,11 @@ solutions.in3050 = function (a, b) {
   }
 };
 
-solutions.lastDigit = function (a, b) {
+solutions.lastDigit = function lastDigit(a, b) {
   return (a % 10 == b % 10);
 };
 
-solutions.sumDouble = function (a, b) {
+solutions.sumDouble = function sumDouble(a, b) {
   if (a == b) {
     return 2 * (a + b);
   } else {
@@ -188,18 +188,18 @@ solutions.sumDouble = function (a, b) {
   }
 };
 
-solutions.makes10 = function (a, b) {
+solutions.makes10 = function makes10(a, b) {
   return ((a == 10 || b == 10) || (a + b == 10));
 };
 
-solutions.notString = function (str) {
+solutions.notString = function notString(str) {
   if (str === null || str === undefined || str.substring(0, 3) === 'not') {
     return str;
   }
   return `not ${str}`;
 };
 
-solutions.front3 = function (str) {
+solutions.front3 = function front3(str) {
   front = '';
   if (str.length >= 3) {
     front = str.substring(0, 3);
@@ -209,7 +209,7 @@ solutions.front3 = function (str) {
   return front + front + front;
 };
 
-solutions.front22 = function (str) {
+solutions.front22 = function front22(str) {
   take = 2;
   if (take > str.length) {
     take = str.length;
@@ -218,7 +218,7 @@ solutions.front22 = function (str) {
   return front + str + front;
 };
 
-solutions.in1020 = function (a, b) {
+solutions.in1020 = function in1020(a, b) {
   if ((a >= 10 && a <= 20) || (b >= 10 && b <= 20)) {
     return true;
   } else {
@@ -226,7 +226,7 @@ solutions.in1020 = function (a, b) {
   }
 };
 
-solutions.delDel = function (str) {
+solutions.delDel = function delDel(str) {
   if (str.length < 4) {
     return str;
   }
@@ -237,7 +237,7 @@ solutions.delDel = function (str) {
   return output;
 };
 
-solutions.intMax = function (a, b, c) {
+solutions.intMax = function intMax(a, b, c) {
   max = 0;
   if (a > b) {
     max = a;
@@ -250,7 +250,7 @@ solutions.intMax = function (a, b, c) {
   return max;
 };
 
-solutions.max1020 = function (a, b) {
+solutions.max1020 = function max1020(a, b) {
   const between1020 = function (num) {
     return num >= 10 && num <= 20;
   };
@@ -264,7 +264,7 @@ solutions.max1020 = function (a, b) {
   return result;
 };
 
-solutions.endUp = function (str) {
+solutions.endUp = function endUp(str) {
   if (str.length <= 3) {
     return str.toUpperCase();
   }
@@ -276,7 +276,7 @@ solutions.endUp = function (str) {
 };
 
 // Warmup-2
-solutions.doubleX = function (str) {
+solutions.doubleX = function doubleX(str) {
   str.toLowerCase();
   x = str.indexOf('x');
   if (x == -1) {
@@ -288,7 +288,7 @@ solutions.doubleX = function (str) {
   return str.substring(x + 1, x + 2) == 'x';
 };
 
-solutions.last2 = function (str) {
+solutions.last2 = function last2(str) {
   count = 0;
   if (str.length < 2) {
     return 0;
@@ -303,11 +303,11 @@ solutions.last2 = function (str) {
   return count;
 };
 
-solutions.array123 = function (nums) {
+solutions.array123 = function array123(nums) {
   return !!(nums.join('').match(/123/g));
 };
 
-solutions.altPairs = function (str) {
+solutions.altPairs = function altPairs(str) {
   result = '';
   for (x = 0; x < str.length; x += 4) {
     end = x + 2;
@@ -319,7 +319,7 @@ solutions.altPairs = function (str) {
   return result;
 };
 
-solutions.noTriples = function (nums) {
+solutions.noTriples = function noTriples(nums) {
   for (x = 0; x < nums.length - 2; x++) {
     first = nums[x];
     if (first == nums[x + 1]) {
@@ -330,7 +330,7 @@ solutions.noTriples = function (nums) {
   } return true;
 };
 
-solutions.frontTimes = function (str, n) {
+solutions.frontTimes = function frontTimes(str, n) {
   frontLen = 3;
   if (frontLen > str.length) {
     frontLen = str.length;
@@ -343,7 +343,7 @@ solutions.frontTimes = function (str, n) {
   return result;
 };
 
-solutions.stringBits = function (str) {
+solutions.stringBits = function stringBits(str) {
   result = '';
   for (x = 0; x < str.length; x += 2) {
     result = result + str.substring(x, x + 1);
@@ -351,7 +351,7 @@ solutions.stringBits = function (str) {
   return result;
 };
 
-solutions.arrayCount9 = function (nums) {
+solutions.arrayCount9 = function arrayCount9(nums) {
   count = 0;
   for (x = 0; x < nums.length; x++) {
     if (nums[x] == 9) {
@@ -361,7 +361,7 @@ solutions.arrayCount9 = function (nums) {
   return count;
 };
 
-solutions.stringMatch = function (a, b) {
+solutions.stringMatch = function stringMatch(a, b) {
   len = Math.min(a.length, b.length);
   count = 0;
   for (x = 0; x < len - 1; x++) {
@@ -374,7 +374,7 @@ solutions.stringMatch = function (a, b) {
   return count;
 };
 
-solutions.stringYak = function (str) {
+solutions.stringYak = function stringYak(str) {
   result = '';
   for (x = 0; x < str.length; x++) {
     if (x + 2 < str.length && str.charAt(x) == 'y' && str.charAt(x + 2) == 'k') {
@@ -386,11 +386,11 @@ solutions.stringYak = function (str) {
   return result;
 };
 
-solutions.has271 = function (nums) {
+solutions.has271 = function has271(nums) {
   return !!(nums.join('').match(/271/g));
 };
 
-solutions.countXX = function (str) {
+solutions.countXX = function countXX(str) {
   count = 0;
   for (x = 0; x < str.length; x++) {
     if (str.charAt(x) == 'x') {
@@ -402,7 +402,7 @@ solutions.countXX = function (str) {
   return count++;
 };
 
-solutions.stringSplosion = function (str) {
+solutions.stringSplosion = function stringSplosion(str) {
   result = '';
   for (x = 0; x < str.length - 1; x++) {
     result = result + str.substring(0, x + 1);
@@ -410,7 +410,7 @@ solutions.stringSplosion = function (str) {
   return result;
 };
 
-solutions.arrayFront9 = function (nums) {
+solutions.arrayFront9 = function arrayFront9(nums) {
   for (x = 0; x < 4; x++) {
     if (nums[x] == 9) {
       return true;
@@ -419,7 +419,7 @@ solutions.arrayFront9 = function (nums) {
   return false;
 };
 
-solutions.stringX = function (str) {
+solutions.stringX = function stringX(str) {
   result = '';
   front = str.substring(0, 1);
   end = str.substring(str.length - 1);
@@ -431,7 +431,7 @@ solutions.stringX = function (str) {
   return front + result + end;
 };
 
-solutions.array667 = function (nums) {
+solutions.array667 = function array667(nums) {
   count = 0;
   for (x = 0; x < nums.length; x++) {
     if (nums[x] == 6) {

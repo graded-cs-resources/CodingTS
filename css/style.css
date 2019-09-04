@@ -3,6 +3,7 @@ html {
   programatically switch this to visible via JS when page is ready */
   visibility:hidden; 
   height: 100%;
+  font-size:14pt;
   box-sizing: border-box;
 }
 
@@ -15,9 +16,11 @@ html {
 body {
   position: relative;
   margin: 0;
+  width:80%;
+  margin-left:auto;
+  margin-right:auto;
   padding-bottom: 2rem;
   min-height: 100%;
-  font-size: 20px;
   background-color: #f9f9f9;
 }
 
@@ -90,6 +93,7 @@ div.probField {
   font-size: 20px;
   width: 100px;
   height: 50px;
+  flex-grow:0;
 }
 
 #topButtonContainer{
@@ -114,23 +118,33 @@ div.probField {
 }
 
 .floatBox {
-  float: left;
+  display:flex;
+  width:100%;
 }
 
 .examples {
   list-style-type: none;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 0.85em;
-  width: 650px;
+  font-family: "Consolas", "Lucida Console", "Courier New", Courier, monospace;
+  max-width: 650px;
+  font-size:.9rem;
 }
 
 .solveArea {
   padding-bottom: 20px;
+  flex-basis:75%;
 }
+
+.solveAreaTop {
+  display:flex;
+  align-content:center;
+  justify-content:space-between;
+}
+
+
 
 #answer {
   width: 600px;
-	height: 300px;
+	height: 500px;
   border: 3px solid #CDC1C5;
   font-size: 18px;
   color: white;
@@ -144,17 +158,18 @@ div.probField {
 }
 
 div#displayResults {
-  position: absolute;
-  top: 200px;
-  margin-left: 575px;
-  margin-right: 15px;
   padding-bottom: 6rem;
+  flex-basis:25%;
 }
 
 .test-table {
-  padding-left: 150px;
-  /* font-family: "Courier New", Courier, monospace; */
-  /* font-size: 0.8em; */
+  padding-left: 15px;
+  font-family: "Consolas", "Lucida Console", "Courier New", Courier, monospace; 
+  font-size: 0.8rem;
+}
+
+.CodeMirror pre {
+  font-family: "Consolas", "Lucida Console", "Courier New", Courier, monospace;
 }
 
 .test-table td {
@@ -172,9 +187,11 @@ th {
 }
 
 .problems {
-  column-count: 3;
-  width: 600px;
+  display:flex;
   overflow-wrap: break-word;
+  font-size:1rem;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .probTitle {
@@ -183,6 +200,8 @@ th {
 
 .exercise-link {
   padding: 5px;
+  flex-basis:8rem;
+  
 }
 
 footer {

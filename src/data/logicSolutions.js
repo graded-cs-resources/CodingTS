@@ -1,15 +1,15 @@
 /** --- Solutions --- **/
 
 let solutions = {};
-
-solutions.cigarParty = function (cigars, isWeekend) {
+solutions.cigarParty = function cigarParty(cigars, isWeekend) {
     if (isWeekend) {
       return cigars >= 40;
     }
     return cigars >= 40 && cigars <= 60;
   };
+
   
-  solutions.dateFashion = function (you, date) {
+  solutions.dateFashion = function dateFashion(you, date) {
     if (you <= 2 || date <= 2) {
       return 0;
     }
@@ -21,7 +21,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
     return 1;
   };
   
-  solutions.squirrelPlay = function (temp, isSummer) {
+  solutions.squirrelPlay = function squirrelPlay(temp, isSummer) {
     if (isSummer && temp >= 60 && temp <= 100) {
       return true;
     }
@@ -33,7 +33,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
     return false;
   };
   
-  solutions.caughtSpeeding = function (speed, isBirthday) {
+  solutions.caughtSpeeding = function caughtSpeeding(speed, isBirthday) {
     if (isBirthday) {
       if (speed <= 65) {
         return 0;
@@ -53,7 +53,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
     }
   };
   
-  solutions.sortaSum = function (a, b) {
+  solutions.sortaSum = function sortaSum(a, b) {
     const res = a + b;
     if (res >= 10 && res <= 19) {
       return 20;
@@ -61,7 +61,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
     return res;
   };
   
-  solutions.alarmClock = function (day, vacation) {
+  solutions.alarmClock = function alarmClock(day, vacation) {
     if (vacation) {
       if (day >= 1 && day <= 5) {
         return '10:00';
@@ -73,7 +73,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
     } else return '10:00';
   };
   
-  solutions.love6 = function (a, b) {
+  solutions.love6 = function love6(a, b) {
     if (a == 6 || b == 6) {
       return true;
     }
@@ -85,44 +85,44 @@ solutions.cigarParty = function (cigars, isWeekend) {
     return false;
   };
   
-  solutions.in1To10 = function (n, outsideMode) {
+  solutions.in1To10 = function in1To10(n, outsideMode) {
     if (outsideMode) {
       return (n <= 1 || n >= 10);
     }
     return (n >= 1 && n <= 10);
   };
   
-  solutions.specialEleven = function (n) {
+  solutions.specialEleven = function specialEleven(n) {
     if (n % 11 == 0 || n % 11 == 1) {
       return true;
     }
     return false;
   };
   
-  solutions.more20 = function (n) {
+  solutions.more20 = function more20(n) {
     return (n % 20 == 1 || n % 20 == 2);
   };
   
-  solutions.old35 = function (n) {
+  solutions.old35 = function old35(n) {
     return (n % 3 == 0) != (n % 5 == 0);
   };
   
-  solutions.less20 = function (n) {
+  solutions.less20 = function less20(n) {
     return (n % 20 == 18 || n % 20 == 19);
   };
   
-  solutions.nearTen = function (num) {
+  solutions.nearTen = function nearTen(num) {
     return (num % 10 <= 2 || num % 10 >= 8);
   };
   
-  solutions.teenSum = function (a, b) {
+  solutions.teenSum = function teenSum(a, b) {
     if ((a >= 13 && a <= 19) || (b >= 13 && b <= 19)) {
       return 19;
     }
     return a + b;
   };
   
-  solutions.answerCell = function (isMorning, isMom, isAsleep) {
+  solutions.answerCell = function answerCell(isMorning, isMom, isAsleep) {
     if (isAsleep) {
       return false;
     }
@@ -134,7 +134,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
     return true;
   };
   
-  solutions.teaParty = function (tea, candy) {
+  solutions.teaParty = function teaParty(tea, candy) {
     if (tea >= 5 && candy >= 5) {
       if (tea >= candy * 2 || candy >= tea * 2) {
         return 2;
@@ -144,7 +144,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
     return 0;
   };
   
-  solutions.fizzString = function (str) {
+  solutions.fizzString = function fizzString(str) {
     if (str[0] == 'f' && str[str.length - 1] == 'b') {
       return 'FizzBuzz';
     } else if (str[0] == 'f') {
@@ -154,7 +154,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
     } else { return str; }
   };
   
-  solutions.fizzString2 = function (n) {
+  solutions.fizzString2 = function fizzString2(n) {
     if (n % 3 == 0 && n % 5 == 0) {
       return 'FizzBuzz!';
     } else if (n % 3 == 0) {
@@ -165,33 +165,33 @@ solutions.cigarParty = function (cigars, isWeekend) {
     return `${n.toString()}!`;
   };
   
-  solutions.twoAsOne = function (a, b, c) {
+  solutions.twoAsOne = function twoAsOne(a, b, c) {
     return a + b == c || a + c == b || b + c == a;
   };
   
-  solutions.inOrder = function (a, b, c, bOk) {
+  solutions.inOrder = function inOrder(a, b, c, bOk) {
     if (bOk) {
       return c > b;
     }
     return b > a && c > b;
   };
   
-  solutions.inOrderEqual = function (a, b, c, equalOk) {
+  solutions.inOrderEqual = function inOrderEqual(a, b, c, equalOk) {
     if (equalOk) {
       return a <= b && b <= c;
     }
     return a < b && b < c;
   };
   
-  solutions.lastDigit = function (a, b, c) {
+  solutions.lastDigit = function lastDigit(a, b, c) {
     return a % 10 == b % 10 || b % 10 == c % 10 || a % 10 == c;
   };
   
-  solutions.lessBy10 = function (a, b, c) {
+  solutions.lessBy10 = function lessBy10(a, b, c) {
     return Math.abs(a - b) >= 10 || Math.abs(b - c) >= 10 || Math.abs(c - a) >= 10;
   };
   
-  solutions.withoutDoubles = function (die1, die2, noDoubles) {
+  solutions.withoutDoubles = function withoutDoubles(die1, die2, noDoubles) {
     if (noDoubles) {
       if (die1 == die2) {
         if (die1 == 6 || die2 == 6) {
@@ -204,7 +204,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
     return die1 + die2;
   };
   
-  solutions.maxMod5 = function (a, b) {
+  solutions.maxMod5 = function maxMod5(a, b) {
     if (a == b) {
       return 0;
     }
@@ -219,7 +219,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
     return a > b ? a : b;
   };
   
-  solutions.redTicket = function (a, b, c) {
+  solutions.redTicket = function redTicket(a, b, c) {
     if (a == 2 && b == 2 && c == 2) {
       return 10;
     }
@@ -235,7 +235,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
     return 0;
   };
   
-  solutions.greenTicket = function (a, b, c) {
+  solutions.greenTicket = function greenTicket(a, b, c) {
     if (a == b && b == c) {
       return 20;
     }
@@ -259,7 +259,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
     return 0;
   };
   
-  solutions.shareDigit = function (a, b) {
+  solutions.shareDigit = function shareDigit(a, b) {
     const aFirst = Math.floor(a / 10);
     const aLast = a % 10;
   
@@ -274,7 +274,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
     return false;
   };
   
-  solutions.sumLimit = function (a, b) {
+  solutions.sumLimit = function sumLimit(a, b) {
     const aLen = Math.abs(a).toString().length;
     const bLen = Math.abs(b).toString().length;
     const res = a + b;
@@ -289,7 +289,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
   
   // Logic-2
   
-  solutions.makeBricks = function (small, big, goal) {
+  solutions.makeBricks = function makeBricks(small, big, goal) {
       // not enough bricks
     if (goal > big * 5 + small) {
       return false;
@@ -303,7 +303,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
     return true;
   };
   
-  solutions.loneSum = function (a, b, c) {
+  solutions.loneSum = function loneSum(a, b, c) {
     let sum = 0;
     if (a != b && a != c) {
       sum += a;
@@ -320,7 +320,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
     return sum;
   };
   
-  solutions.luckySum = function (a, b, c) {
+  solutions.luckySum = function luckySum(a, b, c) {
     let sum = 0;
     const arr = [a, b, c];
   
@@ -336,7 +336,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
   
   
   // TODO: make it work for two funcs
-  solutions.noTeenSum = function (a, b, c) {
+  solutions.noTeenSum = function noTeenSum(a, b, c) {
     const fixTeen = function (n) {
       if (n >= 13 && n <= 19 && n != 15 && n != 16) {
         return 0;
@@ -348,14 +348,14 @@ solutions.cigarParty = function (cigars, isWeekend) {
   };
   
   
-  solutions.roundSum = function (a, b, c) {
+  solutions.roundSum = function roundSum(a, b, c) {
     const round10 = function (num) {
       return Math.round(num / 10) * 10;
     };
     return round10(a) + round10(b) + round10(c);
   };
   
-  solutions.closeFar = function (a, b, c) {
+  solutions.closeFar = function closeFar(a, b, c) {
     const far = function (x, y) {
       return (Math.abs(x - y) >= 2);
     };
@@ -374,7 +374,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
   };
   
   
-  solutions.blackjack = function (a, b) {
+  solutions.blackjack = function blackjack(a, b) {
     if (a > 21 && b > 21) {
       return 0;
     }
@@ -389,7 +389,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
     }
   };
   
-  solutions.evenlySpaced = function (a, b, c) {
+  solutions.evenlySpaced = function evenlySpaced(a, b, c) {
     const max = Math.max(a, b, c);
     const min = Math.min(a, b, c);
     const mid = a + b + c - max - min;
@@ -397,7 +397,7 @@ solutions.cigarParty = function (cigars, isWeekend) {
     return max - mid == mid - min;
   };
   
-  solutions.makeChocolate = function (small, big, goal) {
+  solutions.makeChocolate = function makeChocolate(small, big, goal) {
       // not enough
     if (small + big * 5 < goal) {
       return -1;

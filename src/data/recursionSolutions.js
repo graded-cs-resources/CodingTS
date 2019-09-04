@@ -2,14 +2,14 @@
 
 let solutions = {};
 
-solutions.factorial =  function (n) {
+solutions.factorial = function factorial(n) {
     if (n === 0) {
         return 1;
     }
      return n * this.factorial(n-1)
  }
  
- solutions.bunnyEars = function (bunnies) {
+ solutions.bunnyEars = function bunnyEars(bunnies) {
      if (bunnies <= 0) {
        return 0;
      }
@@ -18,14 +18,14 @@ solutions.factorial =  function (n) {
      }
  }
  
- solutions.fibonacci = function (n) {
+ solutions.fibonacci = function fibonacci(n) {
    if (n < 2) {
        return n;;
    };
      return this.fibonacci(n-1) + this.fibonacci(n-2)
  }
  
- solutions.bunnyEars2 = function (bunnies) {
+ solutions.bunnyEars2 = function bunnyEars2(bunnies) {
  
   if (bunnies <= 0){
     return 0;
@@ -38,7 +38,7 @@ solutions.factorial =  function (n) {
   }
  }
  
- solutions.triangle = function (rows) {
+ solutions.triangle = function triangle(rows) {
  
    if (rows <= 0){
      return 0;
@@ -46,14 +46,14 @@ solutions.factorial =  function (n) {
    return rows + this.triangle(rows-1)
  }
  
- solutions.sumDigits1 = function (n) {
+ solutions.sumDigits1 = function sumDigits1(n) {
      if(n <= 0){
         return 0;
      }
      return n % 10 + this.sumDigits1(Math.floor(n/10));
  }
  
- solutions.count7 = function (n) {
+ solutions.count7 = function count7(n) {
      if(n <= 0)
          return 0;
  
@@ -63,7 +63,7 @@ solutions.factorial =  function (n) {
      return this.count7(Math.floor(n/10));
  }
  
- solutions.count8 = function (n) {
+ solutions.count8 = function count8(n) {
      if(n == 0){
        return 0;
      }
@@ -78,14 +78,14 @@ solutions.factorial =  function (n) {
      return this.count8(parseInt(n/10));
  }
  
- solutions.powerN = function (base, n) {
+ solutions.powerN = function powerN(base, n) {
    if (n == 1){
      return base;
    }
    return base * this.powerN(base, n-1);
  }
  
- solutions.countX = function (str) {
+ solutions.countX = function countX(str) {
      if(str.length == 0)
          return 0;
  
@@ -96,7 +96,7 @@ solutions.factorial =  function (n) {
      }
  }
  
- solutions.countHi = function (str) {
+ solutions.countHi = function countHi(str) {
    if (str.length == 0){
      return 0;
    }
@@ -107,7 +107,7 @@ solutions.factorial =  function (n) {
    return this.countHi(str.substring(1))
  }
  
- solutions.changeXY = function (str) {
+ solutions.changeXY = function changeXY(str) {
    if (str.length == 0){
      return "";
    }
@@ -118,7 +118,7 @@ solutions.factorial =  function (n) {
    return str.charAt(0) + this.changeXY(str.substring(1))
  }
  
- solutions.changePi = function (str) {
+ solutions.changePi = function changePi(str) {
  
    if (str.length <= 0){
      return "";
@@ -131,7 +131,7 @@ solutions.factorial =  function (n) {
    }
  }
  
- solutions.noX = function (str) {
+ solutions.noX = function noX(str) {
    if (str.length == 0){
      return "";
    }
@@ -143,7 +143,7 @@ solutions.factorial =  function (n) {
    }
  }
  
- solutions.array6 = function (nums, i) {
+ solutions.array6 = function array6(nums, i) {
    if (i > nums.length){
      return false;
    }
@@ -167,7 +167,7 @@ solutions.factorial =  function (n) {
    }
  }
  
- solutions.array220 = function (nums, i) {
+ solutions.array220 = function array220(nums, i) {
  
    if (i == nums.length-1 || nums.length == 0){
      return false;
@@ -179,7 +179,7 @@ solutions.factorial =  function (n) {
    return this.array220(nums, i+1);
  }
  
- solutions.allStar = function (str) {
+ solutions.allStar = function allStar(str) {
  
    if (str.length <= 1){
      return str;
@@ -188,7 +188,7 @@ solutions.factorial =  function (n) {
    return  str.charAt(0) + "*" + this.allStar(str.substring(1));
  }
  
- solutions.pairStar = function (str) {
+ solutions.pairStar = function pairStar(str) {
  
    if (str.length <= 1){
      return str.charAt(0);
@@ -200,7 +200,7 @@ solutions.factorial =  function (n) {
    return str.charAt(0) + this.pairStar(str.substring(1));
  }
  
- solutions.endX = function (str) {
+ solutions.endX = function endX(str) {
      if(str.length <= 1) {
        return str;
      }
@@ -211,7 +211,7 @@ solutions.factorial =  function (n) {
     return str.charAt(0) + this.endX(str.substring(1));
  }
  
- solutions.countPairs = function (str) {
+ solutions.countPairs = function countPairs(str) {
  
    if (str.length <= 2){
      return 0;
@@ -223,7 +223,7 @@ solutions.factorial =  function (n) {
    return this.countPairs(str.substring(1));
  }
  
- solutions.countAbc = function (str){
+ solutions.countAbc = function countAbc(str){
  
    if (str.length <= 2) {
      return 0;
@@ -235,7 +235,7 @@ solutions.factorial =  function (n) {
    return this.countAbc(str.substring(1))
  }
  
- solutions.count11 = function (str) {
+ solutions.count11 = function count11(str) {
  
    if (str.length <= 1){
      return 0;
@@ -247,7 +247,7 @@ solutions.factorial =  function (n) {
    return this.count11(str.substring(1));
  }
  
- solutions.stringClean = function (str) {
+ solutions.stringClean = function stringClean(str) {
    if (str.length == 1){
      return str;
    }
@@ -258,7 +258,7 @@ solutions.factorial =  function (n) {
    return str.charAt(0) + this.stringClean(str.substring(1));
  }
  
- solutions.countHi2 = function (str){
+ solutions.countHi2 = function countHi2(str){
    if (str.length <= 1){
      return 0;
    }
@@ -274,7 +274,7 @@ solutions.factorial =  function (n) {
     return this.countHi2(str.substring(1))
  }
  
- solutions.starBit = function (str) {
+ solutions.starBit = function starBit(str) {
    if (str.charAt(0) == "-" && str.charAt(str.length - 1) == "*"){
      return str;
    }
@@ -290,7 +290,7 @@ solutions.factorial =  function (n) {
    return this.starBit(str.substring(1, str.length - 1));
  }
  
- solutions.nestParen = function (str) {
+ solutions.nestParen = function nestParen(str) {
      if(str.length == 0)
          return true;
  
@@ -301,7 +301,7 @@ solutions.factorial =  function (n) {
      return false;
  }
  
- solutions.strCount = function (str, sub) {
+ solutions.strCount = function strCount(str, sub) {
    if (str.length <= 0){
      return 0;
    }
@@ -312,7 +312,7 @@ solutions.factorial =  function (n) {
    return this.strCount(str.substring(1), sub);
  }
  
- solutions.strCopies = function (str, sub, n) {
+ solutions.strCopies = function strCopies(str, sub, n) {
    if (n == 0){
      return true;
    }
@@ -327,7 +327,7 @@ solutions.factorial =  function (n) {
    return this.strCopies(str.substring(1), sub, n)
  }
  
- solutions.strDist = function (str, sub) {
+ solutions.strDist = function strDist(str, sub) {
  
    if (str.length <= sub.length){
          if (str == sub){

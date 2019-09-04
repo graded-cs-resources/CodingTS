@@ -79,7 +79,7 @@
     <div>
       <h2>Functions</h2>
       <p>For these exercises, always <code>return</code> the answer!</p>
-      <pre><code>function adder(first, second) {
+      <pre><code>function adder(first:number, second:number) {
   let theAnswer = first + second;
   return theAnswer;
 }</code></pre>
@@ -97,11 +97,11 @@
         </thead>
         <tbody>
           <tr>
-            <td><code>===</code></td>
+            <td><code>==</code></td>
             <td>exactly equals</td>
           </tr>
           <tr>
-            <td><code>!==</code></td>
+            <td><code>!=</code></td>
             <td>does not equal</td>
           </tr>
           <tr>
@@ -109,12 +109,12 @@
             <td>assignment</td>
           </tr>
           <tr>
-            <td><code>+=</code></td>
-            <td>add or concatenate</td>
+            <td><code>++</code></td>
+            <td>increment</td>
           </tr>
           <tr>
-            <td><code>-=</code></td>
-            <td>subtract</td>
+            <td><code>+=</code></td>
+            <td>add and assign</td>
           </tr>
           <tr>
             <td><code>*</code></td>
@@ -178,12 +178,12 @@
 
     <div>
       <h2>If / Else If / Else</h2>
-      <pre><code>let someNumber = prompt("Pick a number");
+      <pre><code>let someNumber = getNumber();
 
 if (someNumber < 42) {
   // something
 }
-else if (someNumber === 42) {
+else if (someNumber == 42) {
   // another thing
 }
 else {
@@ -224,7 +224,7 @@ console.log("Blastoff!");
 
     <div>
       <h2>Arrays</h2>
-      <pre><code>let nums = [42, 13, 78];
+      <pre><code>let nums:number[] = [42, 13, 78];
 nums[0];  // 42
 nums[2];  // 78
 nums.length;  // 3

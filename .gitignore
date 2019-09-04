@@ -3,6 +3,7 @@ notes.md
 nodingbat.txt
 node_modules
 npm-debug.log.*
+.vscode
 
 ### Windows ###
 # Windows image file caches

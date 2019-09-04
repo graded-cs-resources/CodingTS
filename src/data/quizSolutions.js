@@ -2,7 +2,7 @@
 
 let solutions = {};
 
-solutions.sumDownBy2 = function (n) {
+solutions.sumDownBy2 = function sumDownBy2(n) {
     if (n <= 0) {
         return 0;
     }
@@ -15,11 +15,11 @@ solutions.sumDownBy2 = function (n) {
  }
  
  
-solutions.makes8 = function (a, b) {
+solutions.makes8 = function makes8(a, b) {
   return ((a == 8 || b == 8) || (a + b == 8));
 };
  
-solutions.countOdds = function (nums) {
+solutions.countOdds = function countOdds(nums) {
    let count = 0;
  
      for (let i = 0; i < nums.length; i++){
@@ -30,7 +30,7 @@ solutions.countOdds = function (nums) {
      return count;
  }
  
- solutions.fib = function (n) {
+ solutions.fib = function fib(n) {
    if (n < 2) {
        return n;
    };

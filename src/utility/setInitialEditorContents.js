@@ -7,7 +7,7 @@ module.exports = function (editor, exerciseName, exercise) {
         editor.setValue(localStorage.getItem(exerciseCode));
     } else {
         // no previous solution, just display the default...
-        editor.setValue('function ' + exercise.name + '(' + defaultInput(exercise.name) + '){\n  \n}');
+        editor.setValue(defaultInput(exercise.name) + ' {\n  \n  \n}');
         editor.focus();
         editor.setCursor({
             line: 1,
