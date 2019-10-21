@@ -4,15 +4,19 @@
 let solutions = {};
 
 solutions.firstLast6 = function firstLast6(nums) {
-  // this is just a test  
+  // The first variable is optional, but it makes the code more readable  
   let end = nums.length - 1;
-  return nums[0] == 6 || nums[end] == 6;
+  if (nums.length > 0 && (nums[0] == 6 || nums[end] == 6)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 solutions.sameFirstLast = function sameFirstLast(nums) {
   let end = nums.length - 1;
-  if (nums.length >= 1) {
-    return nums[0] == nums[end];
+  if (nums.length >= 1 && nums[0] == nums[end]) {
+    return true;
   } else { return false; }
 }
 
@@ -22,10 +26,11 @@ solutions.makePi = function makePi() {
 }
 
 solutions.commonEnd = function commonEnd(a, b) {
-  if (a.length >= 1 && b.length >= 1) {
-    return (a[0] == b[0] || a[a.length - 1] == b[b.length - 1]);
+  if (a[0] == b[0] || a[a.length - 1] == b[b.length - 1]) {
+    return true;
+  } else {
+    return false;
   }
-  return false;
 }
 
 solutions.sum3 = function sum3(nums) {
@@ -33,24 +38,19 @@ solutions.sum3 = function sum3(nums) {
 }
 
 solutions.rotateLeft3 = function rotateLeft3(nums) {
-  let rotatedArray = nums.slice();
-  let first = rotatedArray.shift();
-  rotatedArray.push(first);
-  return rotatedArray;
+  return [nums[1], nums[2], nums[0]];
 }
 
 solutions.reverse3 = function reverse3(nums) {
-  return nums.reverse();
+  return [nums[2], nums[1], nums[0]];
 }
 
 solutions.maxEnd3 = function maxEnd3(nums) {
-  let max = nums[0] > nums[2] ? nums[0] : nums[2];
-
-  nums[0] = max;
-  nums[1] = max;
-  nums[2] = max;
-
-  return nums;
+  let max = nums[0];
+  if (nums[2] > nums[0]) {
+    max = nums[2];
+  }
+  return [max, max, max];
 }
 
 solutions.sum2 = function sum2(nums) {
@@ -66,49 +66,37 @@ solutions.sum2 = function sum2(nums) {
 }
 
 solutions.middleWay = function middleWay(a, b) {
-  let newArr = []
-  newArr.push(a[1], b[1]);
-
-  return newArr;
+  return [a[1], b[1]];
 }
 
 solutions.makeEnds = function makeEnds(nums) {
-  let nArr = [];
-  nArr.push(nums[0], nums[nums.length - 1]);
-
-  return nArr;
+  return [nums[0], nums[nums.length - 1]];
 }
 
 solutions.has23 = function has23(nums) {
-
-  if (nums.indexOf(2) != -1 || nums.indexOf(3) != -1) {
-    return true
-  } else {
-    return false
-  }
-}
-
-solutions.no23 = function no23(nums) {
-  if (nums.indexOf(2) == -1 && nums.indexOf(3) == -1) {
+  if (nums[0] == 2 || nums[0] == 3 || nums[1] == 2 || nums[2] == 3) {
     return true;
   } else {
     return false;
   }
 }
 
-solutions.makeLast = function makeLast(nums) {
-  let i = 0;
-  let newNums = [];
-  let last = nums.slice(nums.length - 1); //calling slice on array returns array with 'sliced' portion
-  let double = nums.length * 2;
-
-  while (i < double - 1) {
-    newNums.push(0);
-    i++;
+solutions.no23 = function no23(nums) {
+  if (nums[0] == 2 || nums[0] == 3 || nums[1] == 2 || nums[2] == 3) {
+    return false;
+  } else {
+    return true;
   }
+}
 
-  newNums.push(last[0]);
-  return newNums;
+solutions.makeLast = function makeLast(nums) {
+  let newLength = nums.length * 2;
+  let newArray = [];
+  for (let i = 0; i < newLength; i++) {
+    newArray[i] = 0;
+  }
+  newArray[newLength - 1] = nums[nums.length - 1];
+  return newArray;
 }
 
 solutions.double23 = function double23(nums) {
@@ -123,11 +111,11 @@ solutions.double23 = function double23(nums) {
 }
 
 solutions.fix23 = function fix23(nums) {
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] == 2 && nums[i + 1] == 3) {
-      let tri = nums.indexOf(3);
-      nums[tri] = 0;
-    }
+  //since the length is three, the only options are the first two or last two elements
+  if (nums[0] == 2 && nums[1] == 3) {
+    nums[1] = 0;
+  } else if (nums[1] == 2 && nums[2] == 3) {
+    nums[2] = 0;
   }
   return nums;
 }
@@ -140,8 +128,6 @@ solutions.findTheMedian = function findTheMedian(nums) {
     return (nums[nums.length / 2 - 1] + nums[nums.length / 2]) / 2;
   }
 }
-
-
 
 solutions.start1 = function start1(a, b) {
   let count = 0;
@@ -164,16 +150,15 @@ solutions.biggerTwo = function biggerTwo(a, b) {
 }
 
 solutions.makeMiddle = function makeMiddle(nums) {
-  let first_half = nums.splice(0, nums.length / 2);
-
-  let one = first_half.pop();
-  let two = nums.shift();
-
-  return [one, two]
+  // consider an example. If the array has length 4
+  // then half will be 2, and we want the 2nd and third elements
+  // which will have index 1 (half - 1) and 2 (half)
+  let half = nums.length / 2;
+  return [nums[half - 1], nums[half]];
 }
 
 solutions.plusTwo = function plusTwo(a, b) {
-  let duoArr = new Array();
+  let duoArr = [];
   duoArr[0] = a[0];
   duoArr[1] = a[1];
   duoArr[2] = b[0];
@@ -183,16 +168,12 @@ solutions.plusTwo = function plusTwo(a, b) {
 }
 
 solutions.swapEnds = function swapEnds(nums) {
-  if (nums.length < 2) {
-    return nums;
-  }
-
-  let toStart = nums.pop();
-  let toEnd = nums.shift()
-
-  nums.unshift(toStart);
-  nums.push(toEnd);
-
+  // save the first value temporarily
+  let first = nums[0]
+  // move the last value into the first value
+  nums[0] = nums[nums.length - 1];
+  // move the first value into the last place
+  nums[nums.length - 1] = first;
   return nums;
 }
 
@@ -214,19 +195,21 @@ solutions.findLowestIndex = function findLowestIndex(nums) {
 
 
 solutions.midThree = function midThree(nums) {
-  let x = Math.floor(nums.length / 2); // since 5/2 is 2.5, floor gives 2
-  return nums.slice(x - 1, x + 2);
+  //if our array is of size 3, we want our "pivot" (middle) index to be 1
+  // we can do this with (size - 1)/2
+  let half = (nums.length - 1) / 2;
+  return [nums[half - 1], nums[half], nums[half + 1]];
 }
 
 solutions.maxTriple = function maxTriple(nums) {
-  let mid = Math.floor(nums.length / 2);
+  let mid = nums[(nums.length - 1) / 2];
   let start = nums[0]
   let end = nums[nums.length - 1];
 
-  if (nums[mid] > start && nums[mid] > end) {
-    return nums[mid];
+  if (mid > start && mid > end) {
+    return mid;
   }
-  else if (start > nums[mid] && start > end) {
+  else if (start > mid && start > end) {
     return start;
   } else {
     return end;

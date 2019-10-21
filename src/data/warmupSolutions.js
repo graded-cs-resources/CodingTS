@@ -4,12 +4,26 @@
 let solutions = {};
 
 solutions.stringTimes = function stringTimes(str, n) {
-  return str.repeat(n);
+  let finalStr = "";
+  for (let i = 0; i < n; i++) {
+    finalStr = finalStr + str;
+  }
+  return finalStr;
+
+  // this could be done in a shorter way with the built-in
+  // javascript method String.repeat - maybe try that?
 };
 
 solutions.sleepIn = function sleepIn(weekday, vacation) {
-  //Testing
-  return !weekday || vacation;
+  // || means "or"
+  if (weekday == false || vacation == true) {
+    return true;
+  } else {
+    return false;
+  }
+
+  // shorter solution: 
+  // return !weekday || vacation
 };
 
 solutions.diff21 = function diff21(n) {
@@ -21,8 +35,11 @@ solutions.diff21 = function diff21(n) {
 };
 
 solutions.nearHundred = function nearHundred(n) {
-  return ((Math.abs(100 - n) <= 10) ||
-    (Math.abs(200 - n) <= 10));
+  if (Math.abs(100 - n) <= 10 || Math.abs(200 - n) <= n) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 solutions.missingChar = function missingChar(str, n) {
@@ -49,7 +66,13 @@ solutions.startHi = function startHi(str) {
 };
 
 solutions.hasTeen = function hasTeen(a, b, c) {
-  return (a >= 13 && a <= 19) || (b >= 13 && b <= 19) || (c >= 13 && c <= 19);
+  if ((a >= 13 && a <= 19) ||
+    (b >= 13 && b <= 19) ||
+    (c >= 13 && c <= 19)) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 solutions.mixStart = function mixStart(str) {
