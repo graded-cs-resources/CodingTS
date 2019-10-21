@@ -294,19 +294,28 @@ solutions.bigDiff = function bigDiff(nums) {
 }
 
 solutions.centeredAverage = function centeredAverage(nums) {
-  let minn = Math.min(...nums);
-  let minIn = nums.indexOf(minn);
-  nums.splice(minIn, 1);
-
-  let maxx = Math.max(...nums);
-  let maxIn = nums.indexOf(maxx);
-  nums.splice(maxIn, 1);
-
-  let total = 0;
-  for (let i = 0; i < nums.length; i++) {
-    total += nums[i];
+  let max = nums[0]
+  let min = nums[0]
+  let maxIndex =0; 
+  let minIndex =0; 
+  for(let i=0; i<nums.length; i++){//find max and min 
+    if(nums[i]>=max){
+      max =nums[i]
+      maxIndex = i;
+    }
+    else if (nums[i]<min){
+      min = nums[i]
+      minIndex = i; 
+    }
   }
-  return total / nums.length;
+  let total = 0;
+  for(let i=0; i<nums.length; i++){//if the index of element is neither a maxIndex or minIndex, add to total
+   if(!(i==maxIndex || i== minIndex)){
+     total = total + nums[i]
+    }
+  }
+  return total/(nums.length-2) 
+  
 }
 
 solutions.sum13 = function sum13(nums) {
@@ -397,8 +406,12 @@ solutions.Array = function fizzArray(n) {
 }
 
 solutions.prependSum = function prependSum(nums) {
-  nums.unshift(nums.shift() + nums.shift());
-  return nums;
+  let arr=[];
+  arr[0]=nums[0]+nums[1]
+  for(let i=2; i<nums.length; i++){
+    arr[i-1]=nums[i]; //nums start at i=2 because the first two elements were removed
+  }
+  return arr; 
 }
 
 
@@ -468,8 +481,8 @@ solutions.either24 = function either24(nums) {
 }
 
 solutions.matchUp = function matchUp(nums1, nums2) {
+ //Math.abs(a-b) calculates the absolute value of the difference between a and b
   let count = 0;
-
   for (let i = 0; i < nums1.length; i++) {
     let diff = Math.abs(nums1[i] - nums2[i]);
     if (diff > 0 && diff < 3) {
@@ -531,12 +544,11 @@ solutions.haveThree = function haveThree(nums) {
 
 solutions.twoTwo = function twoTwo(nums) {
   for (let i = 0; i < nums.length; i++) {
-    if (nums[i] == 2) {
-      if (nums[i + 1] != 2) {
-        return false;
-      }
-      i = i + 2;
+    if ((nums[i] == 2)&&(nums[i+1]==2)){
+      i=i+2//if 2 is already found, skip two indexes because the last 2 is already accounted for 
     }
+    else if((nums[i] == 2)&&(nums[i+1]!=2))
+    return false; 
   }
   return true;
 }
@@ -549,14 +561,12 @@ solutions.sameEnds = function sameEnds(nums, len) {
 }
 
 solutions.tripleUp = function tripleUp(nums) {
-  for (let i = nums.length; i > 0; i--) {
-    if (nums[i] - nums[i - 1] == 1) {
-      if (nums[i - 1] - nums[i - 2] == 1) {
-        return true;
-      }
+  for (let i = 0; i<nums.length-2; i++) {
+    if(nums[i] +1 == nums[i+1] && nums[i+1]+1 == nums[i+2]){
+      return true; 
     }
   }
-  return false;
+  return false; 
 }
 
 solutions.fizzArray3 = function fizzArray3(start, end) {
@@ -607,14 +617,17 @@ solutions.pre4 = function pre4(nums) {
 }
 
 solutions.post4 = function post4(nums) {
-  let aft4 = [];
-
-  let i = nums.length - 1;
-  while (i > 0 && nums[i] != 4) {
-    aft4.push(nums[i]);
-    i--;
+  let arr=[];
+  let index4; 
+  for(let i=0; i<nums.length; i++){//get the largest index of 4
+    if(nums[i] == 4){
+      index4 =i; 
+    }
   }
-  return aft4.reverse();
+  for(let c=0; c<nums.length-1-index4; c++){
+    arr[c] = nums[c+1+index4]//put the values after 4 into an array
+  }
+  return arr; 
 }
 
 solutions.notAlone = function notAlone(nums, val) {
