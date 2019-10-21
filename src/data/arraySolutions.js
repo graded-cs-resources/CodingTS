@@ -1,3 +1,7 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable no-param-reassign */
+/* eslint-disable semi */
+/* eslint-disable prefer-const */
 /** --- Solutions --- **/
 // Array-1
 
@@ -188,7 +192,6 @@ solutions.findLowestIndex = function findLowestIndex(nums) {
     }
   }
   return minValIndex;
-
 }
 
 
@@ -372,7 +375,11 @@ solutions.more14 = function more14(nums) {
       four += 1;
     }
   }
-  return one > four;
+  if (one > four) {
+    return true;
+  }else {
+    return false;
+  }
 }
 
 solutions.fizzArray = function fizzArray(n) {
