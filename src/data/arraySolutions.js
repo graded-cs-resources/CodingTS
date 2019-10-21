@@ -74,7 +74,8 @@ solutions.middleWay = function middleWay(a, b) {
 }
 
 solutions.makeEnds = function makeEnds(nums) {
-  return [nums[0], nums[nums.length - 1]];
+  let end = nums.length-1
+  return [nums[0], nums[end]];
 }
 
 solutions.has23 = function has23(nums) {
@@ -150,7 +151,10 @@ solutions.biggerTwo = function biggerTwo(a, b) {
   if (b[0] + b[1] > a[0] + a[1]) {
     return b;
   }
-  return a;
+  else if(a[0] + a[1] > b[0] + b[1]){
+    return a; 
+  }
+  else return a;
 }
 
 solutions.makeMiddle = function makeMiddle(nums) {
@@ -227,45 +231,36 @@ solutions.frontPiece = function frontPiece(nums) {
 }
 
 solutions.unlucky1 = function unlucky1(nums) {
-
-  let sections = [
-    nums.slice(-2),
-    nums.slice(0, 3)
-  ]
-
-  for (let section of sections) {
-    for (let i = 0; i < section.length; i++) {
-      if (section[i] == 1 && section[i + 1] == 3)
-        return true;
+  if((nums[0] == 1 && nums[1] ==3) || (nums[nums.length-2]==1 && nums[nums.length-1]==3)){
+    return true;
     }
-  }
-  return false;
+    else return false;
 }
 
 solutions.make2 = function make2(a, b) {
-  let newAr = a.concat(b);
-
-  return [newAr[0], newAr[1]];
+  if(a.length>=2){
+    return [a[0],a[1]]
+  }
+  else if(a.length == 1){
+    return [a[0], b[0]]
+  }
+  else return [b[0],b[1]]
 }
 
 solutions.front11 = function front11(a, b) {
-  let sections = [
-    a,
-    b
-  ]
-
-  let newA = [];
-
-  for (let section of sections) {
-    if (section.length == 0) {
-
-    } else {
-      newA.push(section[0]);
-    }
+  if(a.length == 0){
+    return [b[0]]
   }
-
-  return newA;
+  else if(b.length==0){
+    return [a[0]]
+  }
+  else if(a.length==0 && b.length==0){
+    return []
+  } 
+  else return [a[0],b[0]]
 }
+  
+
 
 // Array-2
 
