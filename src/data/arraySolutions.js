@@ -189,9 +189,8 @@ solutions.findLowestIndex = function findLowestIndex(nums) {
   let minVal = nums[0];
   let minValIndex = 0;
   for (let i = 0; i < nums.length; i++) {
-    let cur = nums[i];
-    if (cur < minVal) {
-      minVal = cur;
+    if (nums[i] < minVal) {
+      minVal = nums[i]
       minValIndex = i;
     }
   }
@@ -411,9 +410,8 @@ solutions.fizzArray2 = function fizzArray2(n) {
 }
 
 solutions.no14 = function no14(nums) {
-  let has1 = false;
-  let has4 = false;
-
+  let has1 = false; 
+  let has4 = false; 
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] == 1) {
       has1 = true;
@@ -424,7 +422,10 @@ solutions.no14 = function no14(nums) {
     }
 
   }
-  return (!has1 || !has4);
+  if(has1 == true && has4==true){
+    return false;
+  }
+  else return true; 
 }
 
 solutions.isEverywhere = function isEverywhere(nums, val) {
