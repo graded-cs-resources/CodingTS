@@ -126,11 +126,14 @@ solutions.fix23 = function fix23(nums) {
 }
 
 solutions.findTheMedian = function findTheMedian(nums) {
+  //where is the sort method? 
+  let end = nums.length-1; 
+  let mid = nums.length/2 
   if (nums.length % 2 === 1) {
-    return nums[(nums.length - 1) / 2];
+    return nums[end/ 2];
   }
   else {
-    return (nums[nums.length / 2 - 1] + nums[nums.length / 2]) / 2;
+    return (nums[mid - 1] + nums[mid]) / 2;
   }
 }
 
@@ -563,27 +566,15 @@ solutions.shiftLeft = function shiftLeft(nums) {
 }
 
 solutions.tenRun = function tenRun(nums) {
-  let current;
-  let i = 0;
-
-  while (i < nums.length && nums[i] % 10 != 0)
-    i++;
-
-  if (i >= nums.length)
-    return nums;
-
-  current = nums[i];
-  i++;
-
-  while (i < nums.length) {
-    if (nums[i] % 10 == 0)
-      current = nums[i];
-    else
-      nums[i] = current;
-    i++;
-  }
-
-  return nums;
+  let i=0; 
+    while(i<nums.length-1) {
+      if(nums[i]%10 == 0 && !(nums[i+1]%10==0)){//if the current number is a multiple of 10 AND the next number is NOT a multiple of 10 
+        nums[i+1]=nums[i];
+        i++;
+      }
+      else i++; 
+    }
+  return nums; 
 }
 
 solutions.pre4 = function pre4(nums) {
@@ -694,12 +685,19 @@ solutions.zeroMax = function zeroMax(nums) {
 }
 
 solutions.evenOdd = function evenOdd(nums) {
-  let even = nums.filter(isEven);
-  let odd = nums.filter(isOdd);
-
-  let newA = even.concat(odd);
-
-  return newA;
+  //array.concat(array1) combines the two arrays. Use it wisely 
+  //array.push(num) adds a variable num to the array 
+  let even =[]; 
+  let odd=[]; 
+  for(let i=0; i<nums.length; i++){
+    if(nums[i]%2==0){
+      even.push(nums[i])
+    }
+    else {
+      odd.push(nums[i])
+    }
+  }
+  return even.concat(odd)
 }
 
 function isEven(num) {
