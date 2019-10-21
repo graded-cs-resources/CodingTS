@@ -278,10 +278,19 @@ solutions.countEvens = function countEvens(nums) {
 }
 
 solutions.bigDiff = function bigDiff(nums) {
-  let minn = Math.min(...nums);
-  let maxx = Math.max(...nums);
-
-  return Math.abs(maxx - minn);
+  //changed it to a loop problem 
+  //Math.abs returns the absolute value of a number 
+  let max = nums[0]
+  let min = nums[0]
+  for(let i=0; i<nums.length; i++){
+    if(nums[i]>max){
+      max =nums[i]
+    }
+    else if (nums[i]<min){
+      min = nums[i]
+    }
+  }
+  return Math.abs(max - min);
 }
 
 solutions.centeredAverage = function centeredAverage(nums) {
@@ -379,7 +388,7 @@ solutions.more14 = function more14(nums) {
   }
 }
 
-solutions.fizzArray = function fizzArray(n) {
+solutions.Array = function fizzArray(n) {
   let newA = [];
   for (let i = 0; i < n; i++) {
     newA[i] = i;
@@ -452,7 +461,10 @@ solutions.either24 = function either24(nums) {
       has44 = true;
   }
 
-  return has22 != has44;
+  if(has22!=has44){//both boolean values must be different (both true -> false, both false-> false)
+    return true;
+  }
+  else return false; 
 }
 
 solutions.matchUp = function matchUp(nums1, nums2) {
@@ -503,15 +515,18 @@ solutions.modThree = function modThree(nums) {
 solutions.haveThree = function haveThree(nums) {
   let three = 0;
   for (let i = 0; i < nums.length; i++) {
-    if (nums[i] == 3) {
-      if (nums[i + 1] == 3) {
-        return false;
-      }
-      three += 1;
+    if(nums[i] == 3){
+      three++;
+    }
+    if(nums[i+1]==3 && nums[i]==3){
+      return false; 
     }
 
   }
-  return three == 3;
+  if(three==3){
+    return true;
+  }
+  else return false; 
 }
 
 solutions.twoTwo = function twoTwo(nums) {
@@ -578,6 +593,7 @@ solutions.tenRun = function tenRun(nums) {
 }
 
 solutions.pre4 = function pre4(nums) {
+  //array.push(num) adds num to array 
 
   let b44 = [];
 
@@ -709,22 +725,27 @@ function isOdd(num) {
 }
 
 solutions.fizzBuzz = function fizzBuzz(start, end) {
-
   let strArray = [];
-
+  let count = 0; 
   for (let i = start; i < end; i++) {
-    if (i % 3 == 0 && i % 5 == 0) {
-      strArray.push("FizzBuzz");
-    } else if (i % 3 == 0) {
-      strArray.push("Fizz");
-    } else if (i % 5 == 0) {
-      strArray.push("Buzz");
-    } else {
-      let str = i.toString();
-      strArray.push(str);
+    if(i%3==0&&!(i%5==0)){
+      strArray[count]="Fizz"
+      count ++;
+    }
+    else if(i%5==0&&!(i%3==0)){
+      strArray[count]="Buzz"
+      count++;
+    }
+    else if(i%3==0 && i%5==0){
+      strArray[count]="FizzBuzz"
+      count++;
+    }
+    else{
+      strArray[count]=i.toString();
+      count++; 
     }
   }
-  return strArray;
+  return strArray; 
 }
 
 // Array-3
@@ -946,5 +967,4 @@ solutions.countClumps = function countClumps(nums) {
   }
   return clumps;
 }
-
 module.exports = solutions;
