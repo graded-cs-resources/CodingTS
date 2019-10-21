@@ -5,7 +5,7 @@ let exercises = require("../exercisesToShowOnIndex");
 let saveCodeFile = require("../io/saveCodeFile.js");
 let loadCodeFile = require("../io/loadCodeFile.js");
 
-module.exports = function(editor, exerciseName) {
+module.exports = function (editor, exerciseName) {
     // js syntax help
     $('.ajax-popup-link').magnificPopup({
         type: 'ajax'
@@ -35,11 +35,4 @@ module.exports = function(editor, exerciseName) {
         loadCodeFile(editor);
     })
 
-
-    // $('#show').on('click', () => {
-    //   let s = solutions[exerciseName].toString();
-    //   let r = new RegExp(/function/);
-    //   let n = s.replace(r, `function ${exercise.name}`)
-    //   $('#mySolution').text(n)
-    // })
 };

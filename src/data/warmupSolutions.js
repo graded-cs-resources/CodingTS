@@ -4,10 +4,11 @@
 let solutions = {};
 
 solutions.stringTimes = function stringTimes(str, n) {
-    return str.repeat(n);
-  };
-  
+  return str.repeat(n);
+};
+
 solutions.sleepIn = function sleepIn(weekday, vacation) {
+  //Testing
   return !weekday || vacation;
 };
 
@@ -21,7 +22,7 @@ solutions.diff21 = function diff21(n) {
 
 solutions.nearHundred = function nearHundred(n) {
   return ((Math.abs(100 - n) <= 10) ||
-      (Math.abs(200 - n) <= 10));
+    (Math.abs(200 - n) <= 10));
 };
 
 solutions.missingChar = function missingChar(str, n) {
@@ -441,5 +442,5 @@ solutions.array667 = function array667(nums) {
     }
   } return count;
 };
-  
+
 module.exports = solutions;

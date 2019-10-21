@@ -1,6 +1,6 @@
 let $ = require("jquery");
 let _ = require("lodash");
-let ts = require("typescript"); 
+let ts = require("typescript");
 let CodeMirror = require("codemirror-minified");
 
 let exercises = require("./allExercisesIncludingHidden.js");
@@ -27,7 +27,8 @@ let editor = CodeMirror.fromTextArea(document.getElementById("answer"), {
   lineNumbers: true,
   matchBrackets: true,
   mode: "text/typescript",
-  lineWrapping:true,
+  viewportMargin: Infinity,
+  lineWrapping: true,
   extraKeys: {
     "Cmd-/": "toggleComment",
     "Ctrl-/": "toggleComment",
@@ -35,7 +36,21 @@ let editor = CodeMirror.fromTextArea(document.getElementById("answer"), {
     "Shift-Tab": (cm) => cm.execCommand("indentLess")
   }
 });
-editor.setSize("100%",500);
+editor.getWrapperElement().style.height = "auto";
+editor.setSize("100%", "auto");
+
+let solutionArea = CodeMirror.fromTextArea(document.getElementById("solution"), {
+  readOnly: true,
+  noCursor: true,
+  mode: "text/typescript",
+  viewportMargin: Infinity,
+  lineWrapping: true,
+  lineNumbers: true,
+  cursorBlinkRate: -1
+});
+solutionArea.getWrapperElement().style.display = "none";
+solutionArea.getWrapperElement().style.background = "#eeeeee"
+
 
 // Work out which excercise to show
 const urlParams = deParam(window.location.search);
@@ -118,6 +133,25 @@ $('#solve').on('click', () => {
     $('.errorMessage').text(theError);
   }
 });
+
+$('#showSolution').on('click', () => {
+  if ($('#showSolution').html() == "Show Solution") {
+    let s = solutions[exerciseName].toString();
+    let r = new RegExp(/function/);
+    let n = s.replace(r, `function ${exercise.name}`)
+    editor.getWrapperElement().style.display = "none";
+
+    solutionArea.setValue(s);
+    solutionArea.getWrapperElement().style.display = "block";
+    solutionArea.setSize("100%", "auto");
+    $('#showSolution').html("Hide Solution")
+  } else {
+    $('#showSolution').html("Show Solution");
+    editor.getWrapperElement().style.display = "block";
+    solutionArea.getWrapperElement().style.display = "none";
+  }
+
+})
 
 function isTrue(someValue) {
   return someValue === true;
