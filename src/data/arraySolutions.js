@@ -570,24 +570,23 @@ solutions.tripleUp = function tripleUp(nums) {
 }
 
 solutions.fizzArray3 = function fizzArray3(start, end) {
-  let newA = [];
-  for (let i = start; i < end; i++) {
-    newA.push(i);
+  let count =0; 
+  for(let i=start; i<end; i++){
+    arr[count] = i;
+    count ++; 
   }
-  return newA;
+  return arr
 }
 
 solutions.shiftLeft = function shiftLeft(nums) {
-
-  if (nums.length < 1) {
-    return nums;
+  let firstVal = nums[0]
+  for(let i=0; i<nums.length-1;i++){
+    let temp = nums[i];
+    nums[i]=nums[i+1]
+    nums[i+1]=nums[i]
   }
-
-  let first = nums.shift();
-
-  nums.push(first);
-
-  return nums;
+  nums[nums.length-1]=firstVal
+  return nums
 }
 
 solutions.tenRun = function tenRun(nums) {
@@ -675,42 +674,36 @@ solutions.zeroFront = function zeroFront(nums) {
 }
 
 solutions.withoutTen = function withoutTen(nums) {
-  let nlen = nums.length;
-
-  let newA = nums.filter(notten);
-
-  let tlen = newA.length;
-  let x = nlen - tlen;
-
-  let i = 0;
-
-  while (i < x) {
-    newA.push(0);
-    i++;
+  for(let i =0; i<nums.length; i++){
+    if(nums[i]==10){
+      nums[i]=0; 
+      for(let c=i; c<nums.length-1; c++){
+        let temp = nums[c]//basic swap between left and right 
+        nums[c]=nums[c+1];
+        nums[c+1]=temp;
+        if(nums[c]==10){//if ten replaces another ten, do the step one more time 
+          i=i-1; 
+        }
+      }
+    }
   }
-
-  return newA;
-}
-
-function notten(num) {
-  return num != 10;
+  return nums;  
 }
 
 solutions.zeroMax = function zeroMax(nums) {
   let odd = 0;
-  for (let i = nums.length - 1; i >= 0; i--) {
-
-    if (nums[i] != 0 && nums[i] % 2 != 0) {
-      if (nums[i] > odd) {
-        odd = nums[i];
+  for(let i=0; i<nums.length; i++){
+    if(nums[i]==0){
+      for(let c=i+1; c<nums.length; c++){//find largest odd value RIGHT of the 0 
+        if(nums[c]>odd && nums[c]%2==1){
+          odd=nums[c];
+        }
       }
-    }
-    if (nums[i] == 0) {
-      nums[i] = odd;
+      nums[i]=odd; 
+      odd=0;//reset odd just in case there is a larger number before the current 0. 
     }
   }
-
-  return nums;
+  return nums; 
 }
 
 solutions.evenOdd = function evenOdd(nums) {
