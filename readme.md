@@ -7,7 +7,7 @@ A static website to do CodingBat problems in JavaScript or TypeScript. Use it at
 
 - [thewinter](https://github.com/thewinter) - most of the work of making this a javascript program
 - [schellenberg](https://github.com/schellenberg) - for tons of changes includiing saving, syntax highlighting, and more solutions
-- [DavidGriswoldTeacher](https://github.com/DavidGriswoldTeacher) - added TypeScript and webpack for easier deployment, and a bunch of solutions
+- [DavidGriswoldTeacher](https://github.com/DavidGriswoldTeacher) - added TypeScript, and, with the help of a student, many solutions
 
 
 ## Credits
